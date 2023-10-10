@@ -42,6 +42,46 @@ class Player(BasePlayer):
         how many days would it take for the patch to cover half of the lake?
         '''
     )
+    income = models.IntegerField(
+        label='''
+        كم دخلك الشهري
+        '''
+    )
+    track_income = models.BooleanField(
+        label='''
+            أقوم بمتابعة وتسجيل دخلي ومصروفاتي
+            '''
+    )
+    pay_bill = models.BooleanField(
+        label='''
+            أستطيع دفع فواتيري ومصاريفي الشهرية بسهولة
+            '''
+    )
+    have_goal = models.BooleanField(
+        label='''
+           لدي أهداف مالية أطمح لتحقيقها
+            '''
+    )
+    total_main_expenses = models.IntegerField(
+        label='''
+        مجموع مصروفاتك الأساسية مثل )السكن، الأكل التعليم...(
+        '''
+    )
+    total_not_main_expenses = models.IntegerField(
+        label='''
+        مجموع مصروفاتك الثانوية مثل )الترفيه، السفر، المطاعم ....(
+        '''
+    )
+    debt_monthly = models.IntegerField(
+        label='''
+        مجموع مصروفاتك الثانوية مثل )الترفيه، السفر، المطاعم ....(
+        '''
+    )
+    saving_monthly = models.IntegerField(
+        label='''
+        كم من دخلك يذهب لسداد الديون كم ادخارك الشهري ؟
+        '''
+    )
 
 
 # FUNCTIONS
@@ -51,9 +91,18 @@ class Demographics(Page):
     form_fields = ['age', 'gender']
 
 
+class Intro(Page):
+    form_model = 'player'
+    form_fields = ['income', 'track_income', 'pay_bill',
+                   'have_goal',
+                   'total_main_expenses',
+                   'total_not_main_expenses', 'debt_monthly',
+                   'saving_monthly' ]
+
+
 class CognitiveReflectionTest(Page):
     form_model = 'player'
     form_fields = ['crt_bat', 'crt_widget', 'crt_lake']
 
 
-page_sequence = [Demographics, CognitiveReflectionTest]
+page_sequence = [Intro]
