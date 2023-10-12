@@ -3,7 +3,7 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name='survey',
-        display_name="survey test app",
+        display_name="بنك التنمية الاجماعي",
         app_sequence=['survey'],
         num_demo_participants=3,
     ),
@@ -23,7 +23,7 @@ SESSION_FIELDS = []
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
-LANGUAGE_CODE = 'ar'
+LANGUAGE_CODE = 'ar_SA'
 
 # e.g. EUR, GBP, CNY, JPY
 REAL_WORLD_CURRENCY_CODE = 'USD'

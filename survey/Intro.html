@@ -1,11 +1,18 @@
-{{ block title }}قيم وضعك المالي{{ endblock }}
+
+{{ extends "base.html" }}
 {{ block content }}
 
+<div style="background-color: green;">
+    {{ block title }}قيم وضعك المالي{{ endblock }}
+</div>
 
+<div style="background-color: blue;">
+    <h1>ssss</h1>
+</div>
+{{ formfields }}
 
-    {{ formfields }}
+<p class="coloraa">TEST</p>
+<button class="o-tree-btn-next btn btn-primary" id="Next" >Next</button>
 
-
-    {{ next_button }}
 
 {{ endblock }}
