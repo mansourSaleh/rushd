@@ -180,12 +180,12 @@ class Player(BasePlayer):
         ''',
         widget=widgets.TextInput,
     )
-    district = models.StringField(
-        label='''
-        الحي
-        ''',
-        widget=widgets.TextInput,
-    )
+    # district = models.StringField(
+    #     label='''
+    #     الحي
+    #     ''',
+    #     widget=widgets.TextInput,
+    # )
     job = models.StringField(
         choices=["موظف حكومي مدني", "موظف حكومي عسكري", "موظف قطاع خاص", "عمل حر", "طالب", "متقاعد"],
          widget=widgets.RadioSelect,
@@ -194,12 +194,12 @@ class Player(BasePlayer):
         choices=["قطاع حكومي", "قطاع خاص", "أخرى"],
             widget=widgets.RadioSelect,
     )
-    job_number = models.IntegerField(
-        label='''
-        الرقم الوظيفي
-        ''',
-        widget=widgets.TextInput,
-    )
+    # job_number = models.IntegerField(
+    #     label='''
+    #     الرقم الوظيفي
+    #     ''',
+    #     widget=widgets.TextInput,
+    # )
     job_title = models.StringField(
         label='''
         المسمى الوظيفي
@@ -376,7 +376,7 @@ class Productive_Family(Page):
         
 class FinancialRequest(Page):
      form_model = 'player'
-     form_fields = ['bank_branch', 'request_reason', 'does_have_home_worker', 'count_of_all_family_members', 'count_of_children', 'city', 'district', 'job', 'job_sector', 'job_number', 'job_title']
+     form_fields = ['bank_branch', 'request_reason', 'does_have_home_worker', 'count_of_all_family_members', 'count_of_children', 'city',  'job', 'job_sector',  'job_title']
      
      @staticmethod
      def vars_for_template(player: Player):
