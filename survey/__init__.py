@@ -225,6 +225,7 @@ class Player(BasePlayer):
         ],
         blank=True
     )
+    user_group = models.IntegerField()
     
         
         
@@ -413,12 +414,15 @@ class Zood(Page):
        if player.id_in_group % 3 == 0:
            award = award9
            user_group = 1
+           player.user_group = 1
        elif player.id_in_group % 3 == 1:
-            award = award11
-            user_group = 2
-       else:
             award = award_default
+            user_group = 2
+            player.user_group = 2
+       else:
+            award = award11
             user_group = 3
+            player.user_group = 3
               
        return {
              'award': int(award),
