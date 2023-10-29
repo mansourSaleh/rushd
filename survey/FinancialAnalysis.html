@@ -97,9 +97,9 @@
                                                 <form novalidate="" class="ng-untouched ng-pristine ng-invalid">
                                                     <div class="col-xl-6">
                                                         <div class="form-floating">
-                                                            <input type="number" formcontrolname="monthlyIncome"
+                                                            <input  type="text" formcontrolname="monthlyIncome"
                                                                 placeholder="don't remove it"
-                                                                class="form-control ng-untouched ng-pristine ng-invalid"
+                                                                class="form-control ng-untouched ng-pristine ng-invalid convert-to-number"
                                                                 name="monthlyIncome" id="monthlyIncome" min="0"
                                                                 max="100000" step="{{ step }}" 
                                                                 {% if
@@ -153,12 +153,12 @@
                                                     </div>
                                                     <div class="col-xl-6 mb-5">
                                                         <div class="form-floating">
-                                                            <input numbersonly="" type="number"
+                                                            <input numbersonly="" type="text"
                                                                 formcontrolname="monthlyEssentialExpensesSum"
                                                                 placeholder="don't remove it"
                                                                 id="monthlyEssentialExpensesSum"
                                                                 name="monthlyEssentialExpensesSum"
-                                                                class="form-control ng-untouched ng-pristine ng-invalid"
+                                                                class="form-control ng-untouched ng-pristine ng-invalid convert-to-number"
                                                                 min="0" max="100000" step="{{ step }}" {% if
                                                                 form.monthlyEssentialExpensesSum.errors %}
                                                                 style="border-color: red;" {% endif %}><label
@@ -174,10 +174,10 @@
                                                     </div>
                                                     <div class="col-xl-6 mb-5">
                                                         <div class="form-floating">
-                                                            <input type="number" numbersonly=""
+                                                            <input type="text" numbersonly=""
                                                                 formcontrolname="monthlyLuxuryExpensesSum"
                                                                 placeholder="don't remove it"
-                                                                class="form-control ng-untouched ng-pristine ng-invalid"
+                                                                class="form-control ng-untouched ng-pristine ng-invalid convert-to-number"
                                                                 id="monthlyLuxuryExpensesSum"
                                                                 name="monthlyLuxuryExpensesSum" min="0" max="100000"
                                                                 step="{{ step }}" {% if
@@ -194,10 +194,10 @@
                                                         {{ endif }}
                                                     </div>
                                                     <div class="col-xl-6 mb-5">
-                                                        <div class="form-floating ng-star-inserted"><input type="number"
+                                                        <div class="form-floating ng-star-inserted"><input type="text"
                                                                 numbersonly="" formcontrolname="monthlyDebtExpenses"
                                                                 placeholder="don't remove it"
-                                                                class="form-control ng-untouched ng-pristine ng-invalid"
+                                                                class="form-control ng-untouched ng-pristine ng-invalid convert-to-number"
                                                                 id="monthlyDebtExpenses" name="monthlyDebtExpenses"
                                                                 min="0" max="100000" step="{{ step }}" {% if
                                                                 form.monthlyDebtExpenses.errors %}
@@ -213,10 +213,10 @@
                                                     </div>
                                                     <div class="col-xl-6 mb-5">
                                                         <div class="form-floating">
-                                                            <input type="number" numbersonly=""
+                                                            <input type="text" numbersonly=""
                                                                 formcontrolname="monthlySaving"
                                                                 placeholder="don't remove it"
-                                                                class="form-control ng-untouched ng-pristine ng-invalid"
+                                                                class="form-control ng-untouched ng-pristine ng-invalid convert-to-number"
                                                                 id="monthlySaving" name="monthlySaving" min="0"
                                                                 max="100000" step="{{ step }}" {% if
                                                                 form.monthlySaving.errors %} style="border-color: red;"
@@ -251,7 +251,35 @@
 </div>
 
 
-
+<script>
+    // get all input with class of convert-to-number;
+    var inputs = document.querySelectorAll('.convert-to-number');
+    // lesten to on change event
+    inputs.forEach(input => {
+        input.addEventListener('change', function () {
+            // convert the value to number
+            var value = this.value;
+            // convert arabic numbers to english
+            let arabic = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g];
+            let english = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            value = value.toString();
+            for (var i = 0; i < 10; i++) {
+                value = value.replace(arabic[i], english[i]);
+            }
+            console.log(value, "vallue")
+            value = parseFloat(value);
+            // check if the value is not a number
+            if (isNaN(value)) {
+                // set the value to 0
+                this.value = 0;
+            } else {
+                // set the value to the number
+                this.value = value;
+            }
+        })
+    
+    })
+</script>
 
 
 
