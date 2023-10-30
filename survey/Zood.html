@@ -108,131 +108,133 @@
                                         class="wizard-body wizard wizard-3">
                                         {% load otree static %}
                                         <form class="ng-untouched ng-pristine ng-invalid ng-star-inserted">
-                                        <div class="row m-4">
+                                            <div class="row m-4">
 
-                                            <div style="background-color: rgba(12,41,71); border-radius: 10px;"
-                                                class="text-left p-4 mb-8 good-result">
-                                                <h4 class="m-2 d-inline" style="color: rgba(217,156,42)">
-                                                    عزيزي العميل أنت مؤهل للانظمام للتقديم على برنامج زود الادخاري
-                                                    والاستفادة من مميزاته
-                                                </h4>
+                                                <div style="background-color: rgba(12,41,71); border-radius: 10px;"
+                                                    class="text-left p-4 mb-8 good-result">
+                                                    <h4 class="m-2 d-inline" style="color: rgba(217,156,42)">
+                                                        عزيزي العميل أنت مؤهل للانظمام للتقديم على برنامج زود الادخاري
+                                                        والاستفادة من مميزاته
+                                                    </h4>
+
+                                                </div>
+
+
 
                                             </div>
 
-
-
-                                        </div>
-
-                                        {{ if user_group == 1 or user_group == 2 }}
-                                        <div class="wizard-label m-4 text-dark ng-star-inserted ">
-                                            <div class="row" style="justify-content: space-between;">
-                                                <div class="col-xl-5 mt-5 mb-8 br-1rem font-size-lg ">
-                                                    <div class="bg-light p-6 br-1rem font-size-lg">
-                                                        <label
-                                                            class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder"
-                                                            style="padding-top: 30px; padding-bottom: 30px"><input
-                                                                id="register_in_zood" name="register_in_zood"
-                                                                type="checkbox" formcontrolname="register_in_zood"
-                                                                for="register_in_zood"
-                                                                class="ng-untouched ng-pristine ng-valid"><span
-                                                                class="border-primary"></span>هل تود الاشتراك في برنامج
-                                                            زود</label>
+                                            {{ if user_group == 1 or user_group == 2 }}
+                                            <div class="wizard-label m-4 text-dark ng-star-inserted ">
+                                                <div class="row" style="justify-content: space-between;">
+                                                    <div class="col-xl-5 mt-5 mb-8 br-1rem font-size-lg ">
+                                                        <div class="bg-light p-6 br-1rem font-size-lg">
+                                                            <label
+                                                                class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder"
+                                                                style="padding-top: 30px; padding-bottom: 30px"><input
+                                                                    id="register_in_zood" name="register_in_zood"
+                                                                    type="checkbox" formcontrolname="register_in_zood"
+                                                                    for="register_in_zood"
+                                                                    class="ng-untouched ng-pristine ng-valid"><span
+                                                                    class="border-primary"></span>هل تود الاشتراك في
+                                                                برنامج
+                                                                زود</label>
+                                                        </div>
+                                                        <p class="m-2 d-inline">
+                                                            حوافز مالية تصل حتى {{ award}} ريال من قيمة التمويل
+                                                        </p>
                                                     </div>
-                                                    <p class="m-2 d-inline">
-                                                        حوافز مالية تصل حتى {{ award}} ريال من قيمة التمويل
-                                                    </p>
-                                                </div>
 
 
-                                                <div class="col-xl-4 mt-5 mb-8 bg-light p-6 br-1rem font-size-lg checkbox-inline"
-                                                    style="justify-content: center;">
-                                                    <img src="{% static 'zood.png' %}"
-                                                        style="height: 100px; width: 200px;  " />
+                                                    <div class="col-xl-4 mt-5 mb-8 bg-light p-6 br-1rem font-size-lg checkbox-inline"
+                                                        style="justify-content: center;">
+                                                        <img src="{% static 'zood.png' %}"
+                                                            style="height: 100px; width: 200px;  " />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        {{ endif }}
+                                            {{ endif }}
 
-                                        {{ if user_group == 3 }}
-                                        <div class="wizard-label m-4 text-dark ng-star-inserted ">
-                                            <p>هل تود الاشتراك في برنامج
-                                                زود</p>
-                                            <div class="row" style="justify-content: space-between;">
-                                                <div class="col-xl-5 mt-5 mb-8 br-1rem font-size-lg ">
-                                                    <div class="bg-light p-6 br-1rem font-size-lg">
-                                                        <label
-                                                            class=" font-weight-bold text-dark text-center bg-light p-5"
-                                                            style="border-radius: 10px;">
-                                                            <input type="radio" name="register_in_zood"
-                                                            value="True">
-                                                            <img src="{% static 'yes.jpeg' %}"
-                                                                style="height: 100px; width: 200px;  " />
-                                                                <h4 style="text-align: right; margin-top: 5px">
-                                                                    نعم
-                                                                </h4>
-                                                        </label>
+                                            {{ if user_group == 3 }}
+                                            <div class="wizard-label m-4 text-dark ng-star-inserted ">
+                                                <h3>هل تود الاشتراك في برنامج
+                                                    زود ؟</h3>
+                                                <div class="row" style="justify-content: space-between;">
+                                                    <div class="col-xl-5 mt-5 mb-8 br-1rem font-size-lg ">
+                                                        <img src="{% static 'yes.jpeg' %}"
+                                                            style="height: 200px; width: 300px; object-fit: contain;" />
+                                                        <div class="  br-1rem font-size-lg text-center mt-3"
+                                                            style="width: 300px;">
+
+                                                            <label
+                                                                class="px-5 py-3 font-weight-bold text-dark text-center bg-light "
+                                                                style="border-radius: 10px;">
+                                                                <input type="radio" name="register_in_zood"
+                                                                    value="True">
+                                                                نعم
+
+                                                            </label>
+                                                        </div>
+
                                                     </div>
 
-                                                </div>
 
-
-                                                <div class="col-xl-5 mt-5 mb-8 br-1rem font-size-lg ">
-                                                    <div class="bg-light p-6 br-1rem font-size-lg">
-                                                        <label
-                                                            class=" font-weight-bold text-dark text-center bg-light p-5"
+                                                    <div class="col-xl-5 mt-5 mb-8 br-1rem font-size-lg ">
+                                                        <img src="{% static 'no.jpeg' %}"
+                                                        style="height: 200px; width: 300px; object-fit: contain; " />
+                                                        <div  class="  br-1rem font-size-lg text-center mt-3"
+                                                        style="width: 300px;">
+                                                            <label
+                                                            class="px-5 py-3 font-weight-bold text-dark text-center bg-light "
                                                             style="border-radius: 10px;">
-                                                            <input type="radio" name="register_in_zood"
-                                                            value="False">
-                                                            <img src="{% static 'no.jpeg' %}"
-                                                                style="height: 100px; width: 200px;  " />
-                                                                <h4 style="text-align: right; margin-top: 5px">
+                                                                <input type="radio" name="register_in_zood"
+                                                                    value="False">
                                                                     لا
-                                                                </h4>
-                                                        </label>
-                                                    </div>
+                                                               
+                                                            </label>
+                                                        </div>
 
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        {{ endif }}
+                                            {{ endif }}
 
-                                        <div class="row m-4">
-                                            <div class="custom-agree-for-experiment">
-                                                <p>الرجاء الاختيار:</p>
-                                                <label class=" font-weight-bold text-dark text-center bg-light p-5"
-                                                    style="border-radius: 10px;">
-                                                    <input type="radio" name="bank_for_zood" value="بنك الجزيرة">
-                                                    <img src="{% static 'jazee.png' %}"
-                                                        style="height: 100px; width: 200px;  " />
-                                                </label>
-                                                <label class=" font-weight-bold text-dark text-center bg-light p-5"
-                                                    style="border-radius: 10px;">
-                                                    <input type="radio" name="bank_for_zood" value="مصرف الإنماء">
-                                                    <img src="{% static 'enma.png' %}"
-                                                        style="height: 100px; width: 200px;  " />
-                                                </label>
-                                                <label class=" font-weight-bold text-dark text-center bg-light p-5"
-                                                    style="border-radius: 10px;">
-                                                    <input type="radio" name="bank_for_zood" value="بنك الجزيرة">
-                                                    <img src="{% static 'arab.jpeg' %}"
-                                                        style="height: 100px; width: 200px;  " />
-                                                </label>
+                                            <div class="row m-4">
+                                                <div class="custom-agree-for-experiment">
+                                                    <p>الرجاء الاختيار:</p>
+                                                    <label class=" font-weight-bold text-dark text-center bg-light p-5"
+                                                        style="border-radius: 10px;">
+                                                        <input type="radio" name="bank_for_zood" value="بنك الجزيرة">
+                                                        <img src="{% static 'jazee.png' %}"
+                                                            style="height: 100px; width: 200px;  " />
+                                                    </label>
+                                                    <label class=" font-weight-bold text-dark text-center bg-light p-5"
+                                                        style="border-radius: 10px;">
+                                                        <input type="radio" name="bank_for_zood" value="مصرف الإنماء">
+                                                        <img src="{% static 'enma.png' %}"
+                                                            style="height: 100px; width: 200px;  " />
+                                                    </label>
+                                                    <label class=" font-weight-bold text-dark text-center bg-light p-5"
+                                                        style="border-radius: 10px;">
+                                                        <input type="radio" name="bank_for_zood" value="بنك الجزيرة">
+                                                        <img src="{% static 'arab.jpeg' %}"
+                                                            style="height: 100px; width: 200px;  " />
+                                                    </label>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="d-flex justify-content-between border-top mt-5 pt-10">
-                                            <button id="Next"
-                                                class="btn btn-primary font-weight-bolder text-uppercase px-10 o-tree-btn-next">
-                                                التالي</button>
-                                        </div>
+                                            <div class="d-flex justify-content-between border-top mt-5 pt-10">
+                                                <button id="Next"
+                                                    class="btn btn-primary font-weight-bolder text-uppercase px-10 o-tree-btn-next">
+                                                    التالي</button>
+                                            </div>
                                         </form>
                                     </div>
-                                    
+
                                 </div>
-                               
+
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
