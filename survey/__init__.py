@@ -244,7 +244,6 @@ class Intro(Page):
     
     @staticmethod
     def is_displayed(player: Player):
-        print('player is ==>', player.register_in_zood)
         return True
     
     @staticmethod
@@ -430,97 +429,6 @@ class PaymentAmount(Page):
    
     
 
-class Zood(Page):
-    form_model = 'player'
-    form_fields = ['register_in_zood', 'bank_for_zood', 'endorsement', 'type_of_zood']
-    
-    
-    @staticmethod
-    def is_displayed(player: Player):
-        # month_income = player.monthlyIncome
-        # if month_income is None or month_income > 20000:
-        #     return False
-        
-        return True
-    
-    @staticmethod
-    def before_next_page(player: Player, timeout_happened):
-        endorsement_value = player.field_maybe_none('endorsement')
-        if player.user_group == 2:
-            if player.type_of_zood == "0":
-                player.register_in_zood = False
-                player.endorsement = False
-            else:
-                player.register_in_zood = True
-                if endorsement_value == None or endorsement_value == False:
-                    player.participant.vars['dropout_fields'] = ['endorsement']
-                    player.participant.vars['dropout_page'] = 'Zood'
-        elif player.user_group == 3:
-            player.type_of_zood = "0"
-            player.bank_for_zood = "0"
-            if endorsement_value == None or endorsement_value == False:
-                player.participant.vars['dropout_fields'] = ['endorsement']
-                player.participant.vars['dropout_page'] = 'Zood'
-        # print('values isssss ===>', player)
-        # endorsement_value = player.field_maybe_none('endorsement')
-        # if player.user_group == 2:
-        #     if player.type_of_zood == "0":
-        #         player.register_in_zood = False
-        #         player.endorsement = False
-        #     else:
-        #         print('player.type_of_zood not 0', player.type_of_zood)
-        #         player.register_in_zood = True
-        #         if endorsement_value == None or endorsement_value == False:
-        #             print('endorsement_value RISE ERROR', endorsement_value)
-        #             # raise ValueError("يجب الموافقة على الإقرار قبل التأكيد")
-        
-            
-       
-    def error_message(player: Player, values):
-        print('values is<><><><>', values)
-        if not values['endorsement'] and values['type_of_zood'] != "0" and player.user_group == 2:
-            return 'يجب الموافقة على الإقرار'  
-        
-        if not values['endorsement'] and player.user_group == 3 and values['register_in_zood']:
-            print("in error")
-            print('values is<><>=====<><>', values['register_in_zood'])
-            return 'يجب الموافقة على الإقرار' 
-        
-            
-    
-    @staticmethod
-    def vars_for_template(player: Player):
-       income = 10000
-    #    if player.monthlyIncome is not None:
-    #        income = player.monthlyIncome
-           
-       award09Total = income * 0.09 * 60
-       award07Total = income * 0.07 * 60
-       award09 = income * 0.09 
-       award07 = income * 0.07 
-       award_default = 15000
-       user_group = 1
-  
-       if player.id_in_group % 3 == 0:
-           user_group = 1
-           player.user_group = 1 # controled => bank defaul => 15,000
-       elif player.id_in_group % 3 == 1:
-            user_group = 2
-            player.user_group = 2 # three choices not images;
-       else:
-            user_group = 3
-            player.user_group = 3 # with images
-            player.register_in_zood = True
-              
-       return {
-             'award_default': '{:,}'.format(award_default),
-             'award09': '{:,}'.format(int(award09)),
-             'award07': '{:,}'.format(int(award07)),
-             'award09Total': '{:,}'.format(int(award09Total)),
-             'award07Total': '{:,}'.format(int(award07Total)),
-             'user_group': user_group,
-             'type_of_zood': player.type_of_zood,
-       }   
 
 
 
@@ -584,7 +492,7 @@ class Group2(Page):
           if player.monthlyIncome is not None:
                 income = player.monthlyIncome
                 
-                
+              
           award09Total = income * 0.09 * 60
           award07Total = income * 0.07 * 60
           award09 = income * 0.09 
@@ -599,19 +507,33 @@ class Group2(Page):
         
      @staticmethod
      def before_next_page(player: Player, timeout_happened):
-         if not player.endorsement and player.register_in_zood:
+         print("group 2 befor register in zood", player.register_in_zood)
+         must_aggree = False
+         if player.type_of_zood == "0.09":
+             player.register_in_zood = True
+             must_aggree = True
+             
+         if player.type_of_zood == "0.07":
+             player.register_in_zood = True  
+             must_aggree = True
+             
+         if player.type_of_zood == "0":
+             player.register_in_zood = False
+             must_aggree = False
+             
+         if not player.endorsement and must_aggree:
             player.participant.vars['dropout_fields'] = ['endorsement']
-            player.participant.vars['dropout_page'] = 'Group1'
+            player.participant.vars['dropout_page'] = 'Group2'
         
     
      # @staticmethod
      def error_message(player: Player, values):
-         print('error_message is in Grop 2==>', values)
-         
+         must_aggree = False
          if values['type_of_zood'] != "0":
              player.register_in_zood = True
+             must_aggree = True
          
-         if not values['endorsement'] and player.register_in_zood:
+         if not values['endorsement'] and must_aggree:
             return 'يجب الموافقة على الإقرار  قبل المتابعة'
      
      
@@ -642,7 +564,6 @@ class Group3(Page):
     
      # @staticmethod
      def error_message(player: Player, values):
-         print('error_message herer group 3 is==>', values)
          if not values['endorsement'] and values['register_in_zood']:
             return 'يجب الموافقة على الإقرار  قبل المتابعة'
      
@@ -660,4 +581,4 @@ class Result(Page):
 
 
 
-page_sequence = [ Intro, FinancialAnalysis,  PersonalAnalysis ,Freelance,  Productive_Family,  FinancialRequest, PaymentAmount,Group1, Group2 , Group3, Result, ]
+page_sequence = [Intro, FinancialAnalysis,  PersonalAnalysis ,Freelance,  Productive_Family,  FinancialRequest, PaymentAmount,Group1, Group2 , Group3, Result, ]
