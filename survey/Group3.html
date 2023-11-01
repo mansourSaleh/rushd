@@ -123,120 +123,9 @@
 
                                                         </div>
                                                     </div>
-                                                    <!--  -->
-                                                    {{ if user_group == 1 }}
-                                                    <div class="wizard-label m-4 text-dark ng-star-inserted ">
-                                                        <div class="row" style="justify-content: space-between;">
-                                                            <div class="col-xl-5 mt-5 mb-8 br-1rem font-size-lg ">
-                                                                <div class="  br-1rem font-size-lg">
-                                                                    <label
-                                                                        class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder bg-light"
-                                                                        style="padding-top: 10px; padding-bottom: 10px; border-radius: 10px; padding-right: 7px; padding-left: 7px;"><input
-                                                                            id="register_in_zood"
-                                                                            name="register_in_zood" type="checkbox"
-                                                                            formcontrolname="register_in_zood"
-                                                                            for="register_in_zood"
-                                                                            class="ng-untouched ng-pristine ng-valid"><span
-                                                                            class="border-primary" style="margin-left: 7px;"></span>هل تود
-                                                                        الاشتراك في
-                                                                        برنامج
-                                                                        زود</label>
-                                                                </div>
-                                                                <p class=" mt-2">
-                                                                    حوافز مالية تصل حتى {{ award_default }} ريال من قيمة
-                                                                     التمويل
-                                                                </p>
-                                                            </div>
+                                                
 
-
-                                                            <div class="col-xl-4 mt-5 mb-8 bg-light p-6 br-1rem font-size-lg checkbox-inline"
-                                                                style="justify-content: center;">
-                                                                <img src="{% static 'zood.png' %}"
-                                                                    style="height: 100px; width: 200px;  " />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {{ endif }}
-
-                                                    {{ if user_group == 2 }}
-
-                                                    <div class="wizard-label m-4 text-dark ng-star-inserted ">
-                                                        <div class="row">
-                                                            <p>بناء على الراتب المدخل الخاص بك ، نرجو الاختيار مما يلي:</p>
-                                                        </div>
-                                                        <div class="row" style="justify-content: space-between;">
-                                                            <div class="col-xl-5 mt-5 mb-8 br-1rem font-size-lg ">
-                                                                <div>
-                                                                <div class="bg-light  br-1rem font-size-lg">
-                                                                    
-                                                                    <label
-                                                                        class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder bg-light"
-                                                                        style="padding-top: 10px; padding-bottom: 10px; border-radius: 10px; padding-right: 7px; padding-left: 7px;"><input
-                                                                            
-                                                                             type="radio"
-                                                                            formcontrolname="type_of_zood"
-                                                                            for="type_of_zood"
-                                                                            class="ng-untouched ng-pristine ng-valid type_of_zood"
-                                                                            value="0.09"
-                                                                            name="type_of_zood"
-                                                                            >
-                                                                            <span
-                                                                            class="border-primary" style="margin-left: 7px;">
-                                                                        </span>
-                                                                        أرغب الادخار بمبلغ {{award09}} ريال شهريا ( {{award09Total}} الف بنهاية الفترة + المكافآت)
-                                                                    </label>
-                                                                </div>
-
-                                                                <div class="bg-light mt-4  br-1rem font-size-lg">
-                                                                    
-                                                                    <label
-                                                                        class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder bg-light"
-                                                                        style="padding-top: 10px; padding-bottom: 10px; border-radius: 10px; padding-right: 7px; padding-left: 7px;"><input
-                                                                             type="radio"
-                                                                            formcontrolname="type_of_zood"
-                                                                            for="type_of_zood"
-                                                                            class="ng-untouched ng-pristine ng-valid type_of_zood"
-                                                                            value="0.07"
-                                                                            name="type_of_zood"
-                                                                            >
-                                                                            <span
-                                                                            class="border-primary" style="margin-left: 7px;">
-                                                                        </span>
-                                                                        أرغب الادخار بمبلغ {{award07}} ريال شهريا ( {{award07Total}} الف بنهاية الفترة + المكافآت)
-                                                                    </label>
-                                                                </div>
-                                                                <div class="bg-light mt-4  br-1rem font-size-lg">
-                                                                    
-                                                                    <label
-                                                                        class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder bg-light"
-                                                                        style="padding-top: 10px; padding-bottom: 10px; border-radius: 10px; padding-right: 7px; padding-left: 7px;"><input
-                                                                             type="radio"
-                                                                            formcontrolname="type_of_zood"
-                                                                            for="type_of_zood"
-                                                                            class="ng-untouched ng-pristine ng-valid type_of_zood"
-                                                                            value="0"
-                                                                            name="type_of_zood">
-                                                                            <span
-                                                                            class="border-primary" style="margin-left: 7px;">
-                                                                        </span>
-                                                                        لا أرغب بالادخار
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                               
-                                                            </div>
-
-
-                                                            <div class="col-xl-4 mt-5 mb-8 p-6 br-1rem font-size-lg checkbox-inline"
-                                                                style="justify-content: center;">
-                                                                <img src="{% static 'zood.png' %}"
-                                                                    style="height: 100px; width: 200px;  " />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {{ endif }}
-
-                                                    {{ if user_group == 3 }}
+                                                  
                                                     <div class="wizard-label m-4 text-dark ng-star-inserted ">
                                                         <h3>هل تود الاشتراك في برنامج
                                                             زود ؟</h3>
@@ -256,7 +145,7 @@
                                                                         class="px-5 py-3 font-weight-bold text-dark text-center custom-radio "
                                                                         style="border-radius: 10px; background-color: rgba(12,164,64)">
                                                                         <input type="radio" name="register_in_zood"
-                                                                            value="True" checked
+                                                                            value="True" id="register_in_zood"  checked
                                                                             class="checked_endorsment">
                                                                         <span class="checkmark"></span>
                                                                         <span
@@ -284,8 +173,16 @@
                                                                     <label
                                                                         class="px-5 py-3 font-weight-bold text-dark text-center  custom-radio"
                                                                         style="border-radius: 10px; background-color: rgba(252,96,104)">
-                                                                        <input type="radio" name="register_in_zood"
-                                                                            value="False" class="checked_endorsment">
+                                                                        <input type="radio" 
+                                                                        id="register_in_zood"
+                                                                        name="register_in_zood" 
+                                                                        formcontrolname="register_in_zood"
+                                                                        for="register_in_zood"
+                                                                        
+                                                                        
+                                                                        name="register_in_zood"
+                                                                            value="False" 
+                                                                            id="register_in_zood" class="checked_endorsment">
                                                                         <span class="checkmark "
                                                                             style="background-color: rgba(252,96,104);"></span>
                                                                         <span
@@ -299,11 +196,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    {{ endif }}
+                                                   
 
 
 
-                                                    <div id="endorsment" style="display: none;" class="row m-1">
+                                                    <div id="endorsment"  class="row m-1">
                                                         <div>
                                                            
                                                             <div class="bg-light pb-5" style="border-radius: 10px;">
@@ -342,7 +239,7 @@
                                                         <div>
                                                             <p>الرجاء الاختيار:</p>
                                                             <div
-                                                                style="display: flex; justify-content:space-between; align-items: center;">
+                                                                style="display: flex; justify-content:space-between; align-items: center; flex-wrap: wrap;">
                                                                 <label
                                                                     class=" font-weight-bold text-dark text-center bg-light  p-5"
                                                                     style="border-radius: 10px;">
@@ -401,63 +298,9 @@
     const endorsment = document.getElementById("endorsment");
     const endorsementInput = document.getElementById("endorsementInput");
 
-    // group 1
-    {{ if player.user_group == 1 }}
-    console.log("user group is 1")
-    const groupOnceCheckbox = document.getElementById('register_in_zood')
-    if(groupOnceCheckbox){
-        groupOnceCheckbox.addEventListener('change', function () {
-            if (groupOnceCheckbox.checked) {
-                endorsment.style.display = "flex";
-            } else {
-                endorsment.style.display = "none";
-            }
-        });
-    }
-    {{ endif }}
 
-    // group 2
-    {{ if player.user_group == 2   }}
-    const type_of_zoods = document.querySelectorAll(".type_of_zood");
-    const next = document.getElementById("Next");
-    console.log("user group is 2")
-    if(type_of_zoods.length){
-        type_of_zoods.forEach(type_of_zood => {
-            type_of_zood.addEventListener("change", function () {
-               if (type_of_zood.checked && type_of_zood.value === "0"){
-                    endorsment.style.display = "none";
-               }else {
-                    endorsment.style.display = "flex";
-                    if (endorsementInput.checked){
-                    }else{
-                    }
-                    
-               }
-            });
-        })
-        if(endorsementInput){
-            endorsementInput.addEventListener("change", function () {
-                console.log("endorsment.checked", endorsementInput.checked)
-                if (endorsementInput.checked){
-                }else{
-                }
-            });
-        }
-    }
-
-    {{ endif }}
-
-    // gourp 3
-    {{ if player.user_group == 3   }}
-    console.log("user group is 3")
-    console.log(`type_of_zood, {{ player.type_of_zood }} `)
-    console.log(`bank_for_zood,  {{ player.bank_for_zood }} `)
-    console.log(`endorsement,  {{ player.endorsement }} `)
-    console.log(`register_in_zood,  {{ player.register_in_zood }} `)
     const checked_endorsments = document.querySelectorAll(".checked_endorsment");
-    {{ if player.register_in_zood   }}
-         endorsment.style.display = "flex";
-    {{ endif }}
+   
     if (checked_endorsments.length) {
         checked_endorsments.forEach(checked_endorsment => {
             checked_endorsment.addEventListener("change", function () {
@@ -469,7 +312,6 @@
             });
         })
     }
-    {{ endif }}
 </script>
 
 

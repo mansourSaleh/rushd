@@ -33,7 +33,6 @@ class Player(BasePlayer):
         كم دخلك الشهري
         ''',
         min=0,  # Set the minimum value (change as needed)
-        max=50000,  # Set the maximum value (change as needed)
         widget=widgets.TextInput,
     )
     traceMyIncomeAndExpenses = models.BooleanField(
@@ -65,7 +64,6 @@ class Player(BasePlayer):
         مجموع مصروفاتك الأساسية مثل )السكن، الأكل التعليم...(
         ''',
         min=0,  # Set the minimum value (change as needed)
-        max=50000,  # Set the maximum value (change as needed)
         widget=widgets.TextInput,
         
     )
@@ -74,7 +72,6 @@ class Player(BasePlayer):
         مجموع مصروفاتك الثانوية مثل )الترفيه، السفر، المطاعم ....(
         ''',
         min=0,  # Set the minimum value (change as needed)
-        max=50000,  # Set the maximum value (change as needed)
         widget=widgets.TextInput,
     )
     monthlyDebtExpenses = models.IntegerField(
@@ -82,7 +79,6 @@ class Player(BasePlayer):
         مجموع مصروفاتك الثانوية مثل )الترفيه، السفر، المطاعم ....(
         ''',
         min=0,  # Set the minimum value (change as needed)
-        max=50000,  # Set the maximum value (change as needed)
         widget=widgets.TextInput,
     )
     monthlySaving = models.IntegerField(
@@ -90,7 +86,6 @@ class Player(BasePlayer):
         كم من دخلك يذهب لسداد الديون كم ادخارك الشهري ؟
         ''',
         min=0,  # Set the minimum value (change as needed)
-        max=50000,  # Set the maximum value (change as needed)
         widget=widgets.TextInput,
     )
     age = models.IntegerField(
@@ -102,57 +97,37 @@ class Player(BasePlayer):
         widget=widgets.TextInput,
     )
     sex = models.StringField(
-        choices=["ذكر", "انثى"],
+        choices=["1", "0"],
         label="النوع",
         widget=widgets.RadioSelect,
     )
     marital_status = models.StringField(
-        choices=["متزوج/رب أسرة", "مطلق", "أرمل", "أعزب"],
+        choices=["1", "2", "3", "4",],
         label="الحالة الاجتماعية",
         widget=widgets.RadioSelect,
     )
     real_estate = models.StringField(
-        choices=["نعم", "لا"],
+        choices=["1", "0"],
         label="هل تملك عقارات؟",
         widget=widgets.RadioSelect,
     )
     have_freelance_certificate = models.StringField(
-        choices=["نعم", "لا"],
+        choices=["1", "0"],
         label="هل لديك شهادة عمل حر ؟",
         widget=widgets.RadioSelect,
     )
     have_productive_family = models.StringField(
-        choices=["نعم", "لا"],
+        choices=["1", "0"],
         label="هل لديك شهادة الأسر المنتجة؟",
         widget=widgets.RadioSelect,
     )
     bank_branch = models.StringField(
-         choices=["بنك التنمية الاجتماعية بمكة المكرمة","بنك التنمية الاجتماعية بالمدينة المنورة", "بنك التنمية الاجتماعية بالرياض",
-    "بنك التنمية الاجتماعية بالدمام",
-    "بنك التنمية الاجتماعية بالأحساء",
-    "بنك التنمية الاجتماعية بحفر الباطن",
-    "بنك التنمية الاجتماعية بعرعر",
-    "بنك التنمية الاجتماعية بالقريات",
-    "بنك التنمية الاجتماعية بالجوف",
-    "بنك التنمية الاجتماعية بتبوك",
-    "بنك التنمية الاجتماعية بحائل",
-    "بنك التنمية الاجتماعية بالقصيم",
-    "بنك التنمية الاجتماعية بالدوادمي",
-    "بنك التنمية الاجتماعية بينبع",
-    "بنك التنمية الاجتماعية بجدة",
-    "بنك التنمية الاجتماعية بالطائف",
-    "بنك التنمية الاجتماعية بالباحة",
-    "بنك التنمية الاجتماعية بنجران",
-    "بنك التنمية الاجتماعية بجازان",
-    "بنك التنمية الاجتماعية بالقنفذة",
-    "بنك التنمية الاجتماعية بوادي الدواسر",
-    "بنك التنمية الاجتماعية ببيشة ",
-    "بنك التنمية الاجتماعية بخميس مشيط "],
+         choices=["1", "2", "3", "4","5", "6", "7", "8", "9", "10", "11", "12", "13", "14" "15", "16", "17", "18", "19", "20", "21", "22", "23"],
         label=" فرع البنك",
         widget=widgets.RadioSelect,
     )
     request_reason = models.StringField(
-        choices=["التأثيث", "الصيانة", "أخرى"],
+        choices=["1", "2", "3", "4", "5"],
         label="السبب",
         widget=widgets.RadioSelect,
     )
@@ -174,12 +149,12 @@ class Player(BasePlayer):
         max=100,  # Set the maximum value (change as needed)
         widget=widgets.TextInput,
     )
-    city = models.StringField(
-        label='''
-        المدينة
-        ''',
-        widget=widgets.TextInput,
-    )
+    # city = models.StringField(
+    #     label='''
+    #     المدينة
+    #     ''',
+    #     widget=widgets.TextInput,
+    # )
     # district = models.StringField(
     #     label='''
     #     الحي
@@ -187,11 +162,11 @@ class Player(BasePlayer):
     #     widget=widgets.TextInput,
     # )
     job = models.StringField(
-        choices=["موظف حكومي مدني", "موظف حكومي عسكري", "موظف قطاع خاص", "عمل حر", "طالب", "متقاعد"],
+        choices=["1", "2", "3", "4", "5", "6"],
          widget=widgets.RadioSelect,
     )
     job_sector = models.StringField(
-        choices=["قطاع حكومي", "قطاع خاص", "أخرى"],
+        choices=["1", "2", "3"],
             widget=widgets.RadioSelect,
     )
     # job_number = models.IntegerField(
@@ -215,17 +190,44 @@ class Player(BasePlayer):
         label='''
            لدي أهداف مالية أطمح لتحقيقها
             ''',
-        widget=widgets.CheckboxInput,
+        widget=widgets.RadioSelectHorizontal,
+        choices=[
+            [True, 'نعم'],
+            [False, 'لا']
+        ],
         initial=False,  # Set the default value to False
         blank=True, 
+        default=False,
     )
-    bank_for_zood = models.BooleanField(
+    type_of_zood = models.StringField(
+        choices=["0", "0.09", "0.07",],
+        label="نوع الزود",
         widget=widgets.RadioSelectHorizontal,
-        choices=['بنك العربي', 'مصرف الإنماء', 'بنك الجزيرة'
-        ],
-        blank=True
+        default="0",
+        blank=True,
+        
+    )
+    bank_for_zood = models.StringField(
+        widget=widgets.RadioSelectHorizontal,
+        choices=['0', '1','2','3'],
+        blank=True,
+        default='0',
+        initial='0',
     )
     user_group = models.IntegerField()
+    endorsement = models.BooleanField(
+        label='''
+            
+        ''',
+        widget=widgets.RadioSelectHorizontal,
+        choices=[
+            [True, 'نعم'],
+            [False, 'لا']
+        ],
+        blank=True,
+        default=False,
+        
+    )
     
         
         
@@ -242,6 +244,7 @@ class Intro(Page):
     
     @staticmethod
     def is_displayed(player: Player):
+        print('player is ==>', player.register_in_zood)
         return True
     
     @staticmethod
@@ -252,7 +255,14 @@ class Intro(Page):
     
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
-        print('values isssss')
+        if player.id_in_group % 3 == 0:
+           player.user_group = 1 # controled => bank defaul => 15,000
+        elif player.id_in_group % 3 == 1:
+            player.user_group = 2 # three choices not images;
+        else:
+            player.user_group = 3 # with images
+            
+            
         if not player.agree_for_experiment:
             player.participant.vars['dropout_fields'] = ['agree_for_experiment']
             player.participant.vars['dropout_page'] = 'Intro'
@@ -260,8 +270,6 @@ class Intro(Page):
     
     # @staticmethod
     def error_message(player: Player, values):
-        # print the values;
-        print('values is', values)
         if not values['agree_for_experiment']:
             return 'يجب الموافقة على المشاركة في الدراسة للمتابعة'
         
@@ -284,11 +292,7 @@ class FinancialAnalysis(Page):
         #     player.participant.vars['dropout_page'] = 'Intro'
         
     
-    @staticmethod
-    def error_message(self, values):
-        print('values is', values)
-        if not values['monthlyIncome']:
-            return 'Custom error message for my_field'
+   
     
     
     @staticmethod
@@ -306,6 +310,10 @@ class PersonalAnalysis(Page):
     
     @staticmethod
     def is_displayed(player: Player):
+        month_income = player.monthlyIncome
+        if month_income is None or month_income > 20000:
+            return False
+        
         return True
     
     @staticmethod
@@ -336,6 +344,10 @@ class Freelance(Page):
     
     @staticmethod
     def is_displayed(player: Player):
+        month_income = player.monthlyIncome
+        if month_income is None or month_income > 20000:
+            return False
+        
         return True
     
    
@@ -359,6 +371,10 @@ class Productive_Family(Page):
     
     @staticmethod
     def is_displayed(player: Player):
+        month_income = player.monthlyIncome
+        if month_income is None or month_income > 20000:
+            return False
+        
         return True
     
    
@@ -377,7 +393,20 @@ class Productive_Family(Page):
         
 class FinancialRequest(Page):
      form_model = 'player'
-     form_fields = ['bank_branch', 'request_reason', 'does_have_home_worker', 'count_of_all_family_members', 'count_of_children', 'city',  'job', 'job_sector',  'job_title']
+     form_fields = ['bank_branch', 'request_reason', 'does_have_home_worker', 'count_of_all_family_members', 'count_of_children', 'job', 'job_sector',  'job_title']
+     
+     @staticmethod
+     def is_displayed(player: Player):
+        month_income = player.monthlyIncome
+        if month_income is None or month_income > 20000:
+            return False
+        
+        return True
+    
+     @staticmethod
+     def before_next_page(player: Player, timeout_happened):
+        print('values isssss', player)
+        pass
      
      @staticmethod
      def vars_for_template(player: Player):
@@ -390,47 +419,245 @@ class PaymentAmount(Page):
     form_model = 'player'
     form_fields = ['monthly_installment_amount']
     
+    @staticmethod
+    def is_displayed(player: Player):
+        month_income = player.monthlyIncome
+        if month_income is None or month_income > 20000:
+            return False
+        
+        return True
+    
    
     
 
 class Zood(Page):
     form_model = 'player'
-    form_fields = ['register_in_zood', 'bank_for_zood']
+    form_fields = ['register_in_zood', 'bank_for_zood', 'endorsement', 'type_of_zood']
+    
+    
+    @staticmethod
+    def is_displayed(player: Player):
+        # month_income = player.monthlyIncome
+        # if month_income is None or month_income > 20000:
+        #     return False
+        
+        return True
+    
+    @staticmethod
+    def before_next_page(player: Player, timeout_happened):
+        endorsement_value = player.field_maybe_none('endorsement')
+        if player.user_group == 2:
+            if player.type_of_zood == "0":
+                player.register_in_zood = False
+                player.endorsement = False
+            else:
+                player.register_in_zood = True
+                if endorsement_value == None or endorsement_value == False:
+                    player.participant.vars['dropout_fields'] = ['endorsement']
+                    player.participant.vars['dropout_page'] = 'Zood'
+        elif player.user_group == 3:
+            player.type_of_zood = "0"
+            player.bank_for_zood = "0"
+            if endorsement_value == None or endorsement_value == False:
+                player.participant.vars['dropout_fields'] = ['endorsement']
+                player.participant.vars['dropout_page'] = 'Zood'
+        # print('values isssss ===>', player)
+        # endorsement_value = player.field_maybe_none('endorsement')
+        # if player.user_group == 2:
+        #     if player.type_of_zood == "0":
+        #         player.register_in_zood = False
+        #         player.endorsement = False
+        #     else:
+        #         print('player.type_of_zood not 0', player.type_of_zood)
+        #         player.register_in_zood = True
+        #         if endorsement_value == None or endorsement_value == False:
+        #             print('endorsement_value RISE ERROR', endorsement_value)
+        #             # raise ValueError("يجب الموافقة على الإقرار قبل التأكيد")
+        
+            
+       
+    def error_message(player: Player, values):
+        print('values is<><><><>', values)
+        if not values['endorsement'] and values['type_of_zood'] != "0" and player.user_group == 2:
+            return 'يجب الموافقة على الإقرار'  
+        
+        if not values['endorsement'] and player.user_group == 3 and values['register_in_zood']:
+            print("in error")
+            print('values is<><>=====<><>', values['register_in_zood'])
+            return 'يجب الموافقة على الإقرار' 
+        
+            
     
     @staticmethod
     def vars_for_template(player: Player):
        income = 10000
-       if player.monthlyIncome is not None:
-           income = player.monthlyIncome
+    #    if player.monthlyIncome is not None:
+    #        income = player.monthlyIncome
            
-       award9 = income * 0.09
-       award11 = income * 0.11
+       award09Total = income * 0.09 * 60
+       award07Total = income * 0.07 * 60
+       award09 = income * 0.09 
+       award07 = income * 0.07 
        award_default = 15000
        user_group = 1
-    #    check player id_number
-    # we want to devide the plyaes in 3 groups
-    # and show them 3 different awards
-       award = award9
+  
        if player.id_in_group % 3 == 0:
-           award = award9
            user_group = 1
-           player.user_group = 1
+           player.user_group = 1 # controled => bank defaul => 15,000
        elif player.id_in_group % 3 == 1:
-            award = award_default
             user_group = 2
-            player.user_group = 2
+            player.user_group = 2 # three choices not images;
        else:
-            award = award11
             user_group = 3
-            player.user_group = 3
+            player.user_group = 3 # with images
+            player.register_in_zood = True
               
        return {
-             'award': int(award),
+             'award_default': '{:,}'.format(award_default),
+             'award09': '{:,}'.format(int(award09)),
+             'award07': '{:,}'.format(int(award07)),
+             'award09Total': '{:,}'.format(int(award09Total)),
+             'award07Total': '{:,}'.format(int(award07Total)),
              'user_group': user_group,
+             'type_of_zood': player.type_of_zood,
        }   
 
+
+
+class Group1(Page):
+     form_model = 'player'
+     form_fields = ['register_in_zood', 'endorsement', 'bank_for_zood' ]
+     
+     @staticmethod
+     def is_displayed(player: Player):
+        month_income = player.monthlyIncome
+        if month_income is None or month_income > 20000:
+            return False
+        
+        if player.user_group != 1:
+            return False
+        
+        return True
+     
+     @staticmethod
+     def vars_for_template(player: Player):
+         award_default = 15000
+         return {
+             'award_default': '{:,}'.format(award_default),
+         }
+        
+     @staticmethod
+     def before_next_page(player: Player, timeout_happened):
+         if not player.endorsement and player.register_in_zood:
+            player.participant.vars['dropout_fields'] = ['endorsement']
+            player.participant.vars['dropout_page'] = 'Group1'
+        
+    
+     # @staticmethod
+     def error_message(player: Player, values):
+         print('error_message is==>', values['register_in_zood'])
+         if not values['endorsement'] and values['register_in_zood']:
+            return 'يجب الموافقة على الإقرار  قبل المتابعة'
+     
+     
+
+
+class Group2(Page):
+     form_model = 'player'
+     form_fields = ['register_in_zood', 'endorsement', 'bank_for_zood', 'type_of_zood' ]
+     
+     
+     @staticmethod
+     def is_displayed(player: Player):
+        month_income = player.monthlyIncome
+        if month_income is None or month_income > 20000:
+            return False
+        
+        if player.user_group != 2:
+            return False
+        
+        return True
+    
+    
+     @staticmethod
+     def vars_for_template(player: Player):
+          if player.monthlyIncome is not None:
+                income = player.monthlyIncome
+                
+                
+          award09Total = income * 0.09 * 60
+          award07Total = income * 0.07 * 60
+          award09 = income * 0.09 
+          award07 = income * 0.07 
+          return {
+             'award09': '{:,}'.format(int(award09)),
+             'award07': '{:,}'.format(int(award07)),
+             'award09Total': '{:,}'.format(int(award09Total)),
+             'award07Total': '{:,}'.format(int(award07Total)),
+                
+          }
+        
+     @staticmethod
+     def before_next_page(player: Player, timeout_happened):
+         if not player.endorsement and player.register_in_zood:
+            player.participant.vars['dropout_fields'] = ['endorsement']
+            player.participant.vars['dropout_page'] = 'Group1'
+        
+    
+     # @staticmethod
+     def error_message(player: Player, values):
+         print('error_message is in Grop 2==>', values)
+         
+         if values['type_of_zood'] != "0":
+             player.register_in_zood = True
+         
+         if not values['endorsement'] and player.register_in_zood:
+            return 'يجب الموافقة على الإقرار  قبل المتابعة'
+     
+     
+
+class Group3(Page):
+     form_model = 'player'
+     form_fields = ['register_in_zood', 'endorsement', 'bank_for_zood' ]
+     
+        
+     @staticmethod
+     def is_displayed(player: Player):
+        month_income = player.monthlyIncome
+        if month_income is None or month_income > 20000:
+            return False
+        
+        if player.user_group != 3:
+            return False
+        
+        return True
+        
+        
+     @staticmethod
+     def before_next_page(player: Player, timeout_happened):
+         if not player.endorsement and player.register_in_zood:
+            player.participant.vars['dropout_fields'] = ['endorsement']
+            player.participant.vars['dropout_page'] = 'Group1'
+        
+    
+     # @staticmethod
+     def error_message(player: Player, values):
+         print('error_message herer group 3 is==>', values)
+         if not values['endorsement'] and values['register_in_zood']:
+            return 'يجب الموافقة على الإقرار  قبل المتابعة'
+     
+     
+     
+
 class Result(Page):
-    pass
+    @staticmethod
+    def vars_for_template(player: Player):
+        return {
+            'monthlyIncome': player.monthlyIncome,
+        }
+        
 
 
-page_sequence = [ Intro, FinancialAnalysis,  PersonalAnalysis ,Freelance,  Productive_Family,  FinancialRequest, PaymentAmount,Zood, Result, ]
+
+
+page_sequence = [ Intro, FinancialAnalysis,  PersonalAnalysis ,Freelance,  Productive_Family,  FinancialRequest, PaymentAmount,Group1, Group2 , Group3, Result, ]

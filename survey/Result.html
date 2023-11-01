@@ -112,104 +112,28 @@
                                                 <h4 class="m-2 d-inline">
                                                     شكراً لك على مشاركتنا هذه التجربة
                                                 </h4>
-                                                <p class="text-dark-50">
-                                                    سعيدين جداً بوصولك لهذه المرحلة من التحليل المالي،
-                                                    لقد ساعدتنا في تحديد الحلول المالية المناسبة
-                                                    للأفراد والأسر والشركات
+                                                <!-- add if statment -->
+                                                {{ if monthlyIncome > 20000 }}
+                                                <p class="text-dark">
+                                                   هذه التجربة مخصصة لأصحاب الرواتب التي تقل عن 20,000 ريال
                                                 </p>
+
+                                                {{ endif }}
+
+                                                {{ if monthlyIncome <= 20000 }} <p class="text-dark-50">
+                                                    سعيدين جداً بوصولك لهذه المرحلة من التحليل المالي،
+                                                    لقد ساعدتنا في تحديد الحلول المالية والادخادية المناسبة
+                                                    للأفراد والأسر والشركات
+                                                    </p>
+                                                    {{ endif }}
+
                                             </div>
 
 
 
                                         </div>
-                                        <div class="wizard-label m-4 text-dark ng-star-inserted">
-                                            <h3 class="wizard-title">المنتجات المناسبة لك</h3>
-                                            <span style="font-size: smaller; color: #92a1ab;">* المنتجات المقترحة
-                                                تقديرية و تطبق الشروط الخاصة لكل منتج</span>
-                                            <div class="wizard-bar"></div>
-                                        </div>
-                                        <div class="row m-4">
-                                            <div class="col-lg-2 ng-star-inserted"><label class="option"><span
-                                                        class="option-label"><span class="option-head"><span
-                                                                class="option-title"></span></span><span
-                                                            class="option-body">
-                                                            <div class="other-manager d-flex flex-column justify-content-center"
-                                                                style="height: 120px;"><span
-                                                                    class="option-control"></span><a
-                                                                    href="https://www.sdb.gov.sa/ar-sa/our-products/personal/freelance/products/freelance">
-                                                                    <div
-                                                                        class="mb-8 mt-4 d-flex flex-column justify-content-center align-items-center">
-                                                                        <img height="72" alt=""
-                                                                            class="mb-3 image-loaded"
-                                                                            src="https://lending.sdb.gov.sa/assets/images/products/freem.png">
-                                                                    </div>
-                                                                </a></div>
-                                                        </span></span></label></div>
-                                            <div class="col-lg-2 ng-star-inserted"><label class="option"><span
-                                                        class="option-label"><span class="option-head"><span
-                                                                class="option-title"></span></span><span
-                                                            class="option-body">
-                                                            <div class="other-manager d-flex flex-column justify-content-center"
-                                                                style="height: 120px;"><span
-                                                                    class="option-control"></span><a
-                                                                    href="https://www.sdb.gov.sa/ar-sa/our-products/personal/saving-loans/products/saving-program-(1)">
-                                                                    <div
-                                                                        class="mb-8 mt-4 d-flex flex-column justify-content-center align-items-center">
-                                                                        <img height="72" alt=""
-                                                                            class="mb-3 image-loaded"
-                                                                            src="https://lending.sdb.gov.sa/assets/images/products/zod.png">
-                                                                    </div>
-                                                                </a></div>
-                                                        </span></span></label></div>
-                                            <div class="col-lg-2 ng-star-inserted"><label class="option"><span
-                                                        class="option-label"><span class="option-head"><span
-                                                                class="option-title"></span></span><span
-                                                            class="option-body">
-                                                            <div class="other-manager d-flex flex-column justify-content-center"
-                                                                style="height: 120px;"><span
-                                                                    class="option-control"></span><a
-                                                                    href="https://www.sdb.gov.sa/ar-sa/our-products/personal/saving-loans/products/zood_genration">
-                                                                    <div
-                                                                        class="mb-8 mt-4 d-flex flex-column justify-content-center align-items-center">
-                                                                        <img height="72" alt=""
-                                                                            class="mb-3 image-loaded"
-                                                                            src="https://lending.sdb.gov.sa/assets/images/products/zodg.png">
-                                                                    </div>
-                                                                </a></div>
-                                                        </span></span></label></div>
-                                            <div class="col-lg-2 ng-star-inserted"><label class="option"><span
-                                                        class="option-label"><span class="option-head"><span
-                                                                class="option-title"></span></span><span
-                                                            class="option-body">
-                                                            <div class="other-manager d-flex flex-column justify-content-center"
-                                                                style="height: 120px;"><span
-                                                                    class="option-control"></span><a
-                                                                    href="https://www.sdb.gov.sa/ar-sa/individual/indvidual-support/support-product/saving-program">
-                                                                    <div
-                                                                        class="mb-8 mt-4 d-flex flex-column justify-content-center align-items-center">
-                                                                        <img height="72" alt=""
-                                                                            class="mb-3 image-loaded"
-                                                                            src="https://lending.sdb.gov.sa/assets/images/products/trc.png">
-                                                                    </div>
-                                                                </a></div>
-                                                        </span></span></label></div>
-                                            <div class="col-lg-2 ng-star-inserted"><label class="option"><span
-                                                        class="option-label"><span class="option-head"><span
-                                                                class="option-title"></span></span><span
-                                                            class="option-body">
-                                                            <div class="other-manager d-flex flex-column justify-content-center"
-                                                                style="height: 120px;"><span
-                                                                    class="option-control"></span><a
-                                                                    href="https://www.sdb.gov.sa/ar-sa/our-products/personal/nppf/products/nppf">
-                                                                    <div
-                                                                        class="mb-8 mt-4 d-flex flex-column justify-content-center align-items-center">
-                                                                        <img height="72" alt=""
-                                                                            class="mb-3 image-loaded"
-                                                                            src="https://lending.sdb.gov.sa/assets/images/products/fmlyp.png">
-                                                                    </div>
-                                                                </a></div>
-                                                        </span></span></label></div>
-                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -230,7 +154,7 @@
         // Get the SVGs
         const svgMale = document.getElementById('male-svg');
         const svgFemale = document.getElementById('female-svg');
-        if (selectedValue == 'نعم') {
+        if (selectedValue == '1') {
             svgMale.style.display = 'block';
             svgFemale.style.display = 'none';
             svgFemale.value = '';

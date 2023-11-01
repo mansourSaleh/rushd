@@ -94556,6 +94556,10 @@ body {
     transform: scale(.8) translateY(-.4rem) translate(.6rem)
 }
 
+.form-floating>.form-control:focus, .form-floating>.form-control:not(:placeholder-shown){
+    padding-top: 10px !important;
+}
+
 .form-floating>.form-control {
     -webkit-appearance: none
 }
@@ -94571,11 +94575,10 @@ body {
     transition: opacity .1s ease-in-out,transform .1s ease-in-out
 }
 
-.form-floating>.form-control,.form-floating>.form-select {
+/* .form-floating>.form-control,.form-floating>.form-select {
     height: calc(3rem + 2px);
     line-height: 1.25
-}
-
+} */
 .form-control:focus {
     color: #212529;
     background-color: #fff;
@@ -95005,4 +95008,61 @@ body {
         flex: 0 0 100%;
         padding: 1rem 0
     }
+}
+
+
+.greenCheckBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    border: 1px #f8f9fa solid;
+    flex-direction: column;
+}
+.greenCheckBox > img {
+    /* border-radius: 30px !important; */
+    height: 200px; 
+    width: 300px; 
+    object-fit: cover;
+}
+
+.custom-radio {
+    display: inline-block;
+    position: relative;
+    /* padding-left: 30px; Adjust the padding to align the check mark properly */
+    /* margin-right: 10px; Add some spacing between radio buttons */
+}
+
+/* Hide the default radio input */
+.custom-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create the custom check mark style using a pseudo-element */
+.custom-radio .checkmark {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    height: 15px; /* Adjust the size of the check mark */
+    width: 15px; /* Adjust the size of the check mark */
+    background-color: rgba(12,164,64); /* Background color of the radio button */
+    border: 1px solid #fff; /* Border color of the radio button */
+    /* border-radius: 50%; Make it a circle */
+    margin-right: 10px
+}
+.custom-radio .checkmark .redd {
+    background-color: rgba(252,96,104);
+}
+
+/* Style the radio button when it's checked */
+.custom-radio input:checked + .checkmark::after {
+    content: "\2713"; /* Check mark symbol */
+    font-size: 16px; /* Adjust the size of the check mark symbol */
+    color: #FFFFFF;
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the check mark symbol */
 }

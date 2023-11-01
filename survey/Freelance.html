@@ -118,7 +118,7 @@
                                                             </span>
                                                             <span class="option-control">
                                                                 <span class="radio radio-outline">
-                                                                    <input name="have_freelance_certificate" type="radio" value="نعم"
+                                                                    <input name="have_freelance_certificate" type="radio" value="1"
                                                                         class="ng-untouched ng-pristine ng-invalid my-radio"></span>
                                                             </span>
                                                             <span id="male-svg" style="display: none;">
@@ -144,7 +144,7 @@
                                                             </span>
                                                             <span class="option-control">
                                                                 <span class="radio radio-outline">
-                                                                    <input name="have_freelance_certificate" type="radio" value="لا"
+                                                                    <input name="have_freelance_certificate" type="radio" value="0"
                                                                         class="ng-untouched ng-pristine ng-invalid my-radio">
 
                                                                 </span>
@@ -195,7 +195,7 @@
         // Get the SVGs
         const svgMale = document.getElementById('male-svg');
         const svgFemale = document.getElementById('female-svg');
-        if (selectedValue == 'نعم') {
+        if (selectedValue == '1') {
             svgMale.style.display = 'block';
             svgFemale.style.display = 'none';
             svgFemale.value = '';

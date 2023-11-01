@@ -118,7 +118,7 @@
                                                                     القسط الشهري
                                                                 </label>
                                                                 <select id="monthly_installment_amount"
-                                                                    style="height: 80px;" {% if
+                                                                     {% if
                                                                     form.monthly_installment_amount.errors %}
                                                                     style="border-color: red;" {% endif %}
                                                                     name="monthly_installment_amount"
@@ -163,7 +163,7 @@
                                                                 <label for="floatingPassword">
                                                                     مبلغ التمويل
                                                                 </label>
-                                                                <select style="height: 80px;" name="aa"
+                                                                <select  name="aa"
                                                                 disabled
                                                                     placeholder="placeholder"
                                                                     class="form-control ng-pristine ng-invalid ng-touched">
@@ -209,7 +209,7 @@
     var totalHere = document.getElementById("totalHere");
     var total = 0;
     monthly_installment_amount.addEventListener("change", function () {
-        total = parseInt(monthly_installment_amount.value) * 40;
+        total = parseInt(monthly_installment_amount.value) * 60;
         totalHere.innerHTML = total;
     });
 </script>

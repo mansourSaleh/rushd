@@ -128,7 +128,7 @@
                                                             </span>
                                                             <span class="option-control">
                                                                 <span class="radio radio-outline">
-                                                                    <input name="sex" type="radio" value="ذكر"
+                                                                    <input name="sex" type="radio" value="1"
                                                                         class="ng-untouched ng-pristine ng-invalid my-radio"></span>
                                                             </span>
                                                             <span id="male-svg" style="display: none;">
@@ -154,7 +154,7 @@
                                                             </span>
                                                             <span class="option-control">
                                                                 <span class="radio radio-outline">
-                                                                    <input name="sex" type="radio" value="انثى"
+                                                                    <input name="sex" type="radio" value="0"
                                                                         class="ng-untouched ng-pristine ng-invalid my-radio">
 
                                                                 </span>
@@ -180,21 +180,21 @@
                                                             <label for="floatingPassword">الحالة
                                                                 االجتماعية
                                                             </label>
-                                                            <select id="marital_status" style="height: 80px;" {% if
+                                                            <select id="marital_status"  {% if
                                                                 form.marital_status.errors %} style="border-color: red;"
                                                                 {% endif %} name="marital_status"
                                                                 placeholder="placeholder"
                                                                 class="form-control ng-pristine ng-invalid ng-touched">
                                                                 <option disabled="" selected="" value="">الرجاء الاختيار
                                                                 </option>
-                                                                <option value="متزوج/رب أسرة" class="ng-star-inserted">
+                                                                <option value="1" class="ng-star-inserted">
                                                                     متزوج/رب أسرة
                                                                 </option>
-                                                                <option value="مطلق" class="ng-star-inserted">مطلق
+                                                                <option value="2" class="ng-star-inserted">مطلق
                                                                 </option>
-                                                                <option value="أرمل" class="ng-star-inserted">أرمل
+                                                                <option value="3" class="ng-star-inserted">أرمل
                                                                 </option>
-                                                                <option value="أعزب" class="ng-star-inserted">أعزب
+                                                                <option value="4" class="ng-star-inserted">أعزب
                                                                 </option>
                                                             </select>
 
@@ -220,7 +220,7 @@
                                                             </span>
                                                             <span class="option-control">
                                                                 <span class="radio radio-outline">
-                                                                    <input name="real_estate" type="radio" value="نعم"
+                                                                    <input name="real_estate" type="radio" value="1"
                                                                         class="ng-untouched ng-pristine ng-invalid my-radio-1"></span>
                                                             </span>
                                                             <span id="yes-svg" style="display: none;">
@@ -247,7 +247,7 @@
                                                             </span>
                                                             <span class="option-control">
                                                                 <span class="radio radio-outline">
-                                                                    <input name="real_estate" type="radio" value="لا"
+                                                                    <input name="real_estate" type="radio" value="0"
                                                                         class="ng-untouched ng-pristine ng-invalid my-radio-1">
 
                                                                 </span>
@@ -297,7 +297,7 @@
         // Get the SVGs
         const svgMale = document.getElementById('male-svg');
         const svgFemale = document.getElementById('female-svg');
-        if (selectedValue == 'ذكر') {
+        if (selectedValue == '1') {
             svgMale.style.display = 'block';
             svgFemale.style.display = 'none';
             svgFemale.value = '';
@@ -312,7 +312,7 @@
         // Get the SVGs
         const svgMale = document.getElementById('yes-svg');
         const svgFemale = document.getElementById('no-svg');
-        if (selectedValue == 'نعم') {
+        if (selectedValue == '1') {
             svgMale.style.display = 'block';
             svgFemale.style.display = 'none';
             svgFemale.value = '';
