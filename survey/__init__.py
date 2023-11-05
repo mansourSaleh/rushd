@@ -126,10 +126,16 @@ class Player(BasePlayer):
         label=" فرع البنك",
         widget=widgets.RadioSelect,
     )
-    request_reason = models.StringField(
-        choices=["1", "2", "3", "4", "5"],
-        label="السبب",
+    loan_type = models.StringField(
+         choices=["1", "2", "3", "4",],
+        label=" نوع القرض ",
         widget=widgets.RadioSelect,
+    )
+    request_reason = models.StringField(
+        label='''
+       السبب
+        ''',
+        widget=widgets.TextInput,
     )
     does_have_home_worker = models.BooleanField(
         label='''
@@ -165,10 +171,10 @@ class Player(BasePlayer):
         choices=["1", "2", "3", "4", "5", "6"],
          widget=widgets.RadioSelect,
     )
-    job_sector = models.StringField(
-        choices=["1", "2", "3"],
-            widget=widgets.RadioSelect,
-    )
+    # job_sector = models.StringField(
+    #     choices=["1", "2", "3"],
+    #         widget=widgets.RadioSelect,
+    # )
     # job_number = models.IntegerField(
     #     label='''
     #     الرقم الوظيفي
@@ -392,7 +398,7 @@ class Productive_Family(Page):
         
 class FinancialRequest(Page):
      form_model = 'player'
-     form_fields = ['bank_branch', 'request_reason', 'does_have_home_worker', 'count_of_all_family_members', 'count_of_children', 'job', 'job_sector',  'job_title']
+     form_fields = ['bank_branch', "loan_type" ,'request_reason', 'does_have_home_worker', 'count_of_all_family_members', 'count_of_children', 'job',  'job_title']
      
      @staticmethod
      def is_displayed(player: Player):

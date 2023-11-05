@@ -208,49 +208,52 @@
                                                                 <label for="floatingPassword">نوع
                                                                     التمويل</label>
                                                                 <select  placeholder="placeholder"
+                                                                id="loan_type"  {% if
+                                                                    form.loan_type.errors %}
+                                                                    style="border-color: red;" {% endif %}
+                                                                    name="loan_type" 
                                                                     class="form-control ng-pristine ng-invalid ng-touched"
-                                                                    disabled>
-                                                                    <option disabled="" selected="" value="">قرض
+                                                                    >
+                                                                    <option selected="" value="1">قرض
                                                                         الأسرة
                                                                     </option>
+                                                                    <option selected="" value="2">قرض
+                                                                        الترميم
+                                                                    </option>
+                                                                    <option selected="" value="3">قرض
+                                                                        الزواج
+                                                                    </option>
+                                                                    <option selected="" value="4">قرض
+                                                                        العمل الحر
+                                                                    </option>
                                                                 </select>
+                                                                {{ if form.loan_type.errors }}
+                                                                <div class="text-danger">{{ form.loan_type.errors.0 }}
+                                                                </div>
+                                                                {{ endif }}
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-xl-6 my-3 ng-star-inserted">
-                                                            <div class="form-floating">
-                                                                <label for="floatingPassword">
-                                                                    الغرض من التمويل
-                                                                </label>
-                                                                <select id="request_reason"  {% if
-                                                                    form.request_reason.errors %}
-                                                                    style="border-color: red;" {% endif %}
-                                                                    name="request_reason" placeholder="placeholder"
-                                                                    class="form-control ng-pristine ng-invalid ng-touched">
-                                                                    <option disabled="" selected="" value="">الرجاء
-                                                                        الاختيار
-                                                                    </option>
-                                                                    <option value="1" class="ng-star-inserted">
-                                                                        التأثيث</option>
-                                                                    <option value="2" class="ng-star-inserted">
-                                                                        الصيانة</option>
-                                                                    <option value="3" class="ng-star-inserted">
-                                                                        التعليم</option>
-                                                                    <option value="4" class="ng-star-inserted">
-                                                                        الصحة</option>
-                                                                    <option value="5" class="ng-star-inserted">
-                                                                        أخرى</option>
-
-                                                                </select>
-
+                                                            
+                                                                <div class="form-floating">
+                                                                    <input type="text"
+                                                                        placeholder="don't remove it"
+                                                                        class="form-control ng-untouched ng-pristine ng-invalid "
+                                                                        id="request_reason"
+                                                                        name="request_reason" {% if
+                                                                        form.request_reason.errors %}
+                                                                        style="border-color: red;" {% endif %}><label
+                                                                        for="floatingPassword">
+                                                                            سبب القرض
+                                                                    </label></div>
                                                                 {{ if form.request_reason.errors }}
-                                                                <div class="text-danger">{{ form.request_reason.errors.0
-                                                                    }}
-                                                                </div>
+                                                                <div class="text-danger">{{
+                                                                    form.request_reason.errors.0 }}</div>
                                                                 {{ endif }}
-                                                            </div>
+                                                          
                                                         </div>
                                                         <div class="col-xl-6 my-3 ng-star-inserted">
                                                             <label class=" font-weight-bold text-dark text-center">
@@ -308,34 +311,7 @@
 
                                                     <!--job -->
                                                     <div class="row">
-                                                        <div class="col-xl-6 my-3 ng-star-inserted">
-                                                            <div class="form-floating">
-                                                                <label for="floatingPassword">اختر
-                                                                    القطاع الوظيفي
-                                                                </label>
-                                                                <select id="job_sector"  {% if
-                                                                    form.job_sector.errors %} style="border-color: red;"
-                                                                    {% endif %} name="job_sector"
-                                                                    placeholder="placeholder"
-                                                                    class="form-control ng-pristine ng-invalid ng-touched">
-                                                                    <option disabled="" selected="" value="">الرجاء
-                                                                        الاختيار
-                                                                    </option>
-                                                                    <option value="1" class="ng-star-inserted">
-                                                                        بقطاع حكومي</option>
-                                                                    <option value="2" class="ng-star-inserted">
-                                                                        بقطاع خاص</option>
-                                                                    <option value="3" class="ng-star-inserted">أخرى
-                                                                    </option>
-
-                                                                </select>
-
-                                                                {{ if form.job_sector.errors }}
-                                                                <div class="text-danger">{{ form.job_sector.errors.0 }}
-                                                                </div>
-                                                                {{ endif }}
-                                                            </div>
-                                                        </div>
+                                                       
                                                         <div class="col-xl-6 my-3 ng-star-inserted">
                                                             <div class="form-floating">
                                                                 <label for="floatingPassword">اختر
@@ -372,11 +348,7 @@
                                                                 {{ endif }}
                                                             </div>
                                                         </div>
-                                                    </div>
-
-                                                    <!-- job title and number; -->
-                                                    <div class="row">
-                                                        <div class="col-lg-6 mb-4 ng-star-inserted">
+                                                        <div class="col-lg-6  my-3 mb-4 ng-star-inserted">
                                                             <div class="form-floating"><input type="text"
                                                                     placeholder="don't remove it"
                                                                     class="form-control ng-untouched ng-pristine ng-invalid"
@@ -389,8 +361,9 @@
                                                                 form.job_title.errors.0 }}</div>
                                                             {{ endif }}
                                                         </div>
-                                                       
                                                     </div>
+
+                                                  
 
 
                                                     <div class="d-flex justify-content-between border-top mt-5 pt-10">
