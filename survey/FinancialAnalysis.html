@@ -23,65 +23,108 @@
                             <div class="card-body p-0">
                                 <div data-wizard-state="step-first" data-wizard-clickable="false"
                                     class="wizard wizard-2">
-                                    <div class="wizard-nav border-right py-8 px-8 py-lg-20 px-lg-10">
-                                        <div class="wizard-steps">
-                                            <div data-wizard-type="step" class="wizard-step ng-star-inserted"
-                                                data-wizard-state="">
-                                                <div class="wizard-wrapper ng-star-inserted">
-                                                    <div class="wizard-icon ng-star-inserted">
-                                                        <span><svg id="check-mark" xmlns="http://www.w3.org/2000/svg"
-                                                                width="20.05" height="20.05" viewBox="0 0 20.05 20.05">
-                                                                <g id="Group_215" data-name="Group 215">
-                                                                    <path id="Path_246" data-name="Path 246"
-                                                                        d="M17.113,17.113a10.024,10.024,0,1,0-14.177,0A10.023,10.023,0,0,0,17.113,17.113ZM6.431,8.493l2.254,2.254,4.938-4.934L15.37,7.56l-4.934,4.934L8.685,14.241,6.938,12.494,4.684,10.24Z"
-                                                                        fill="#12a8c0"></path>
-                                                                </g>
-                                                            </svg></span>
-                                                    </div>
-                                                    <div class="wizard-label">
-                                                        <h3 class="wizard-title">
-                                                            ساعد البنك في تجربة الدراسة
-                                                        </h3>
-                                                        <div class="wizard-desc text-mute font-weight-bold">
-                                                            ساعد البنك في تجربة الدراسة
+                                    <div onclick="toggle(event)">
+
+                                        <div class="wizard-nav border-right pt-8 px-8 pt-lg-20 px-lg-10 ">
+                                            <div class="wizard-steps">
+                                                <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                    data-wizard-state="current">
+                                                    <div class="wizard-wrapper ng-star-inserted">
+
+                                                        <div class="wizard-label">
+                                                            <h3 class="wizard-title">
+                                                                قيم وضعك
+                                                                المالي
+                                                            </h3>
+                                                            <div class="wizard-desc text-mute font-weight-bold">
+                                                                قيم وضعك
+                                                                المالي
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div data-wizard-type="step" class="wizard-step ng-star-inserted"
-                                                data-wizard-state="current">
-                                                <div class="wizard-wrapper ng-star-inserted">
-                                                    <div class="wizard-label">
-                                                        <h3 class="wizard-title">
-                                                            قيم وضعك
-                                                            المالي
-                                                        </h3>
-                                                        <div class="wizard-desc text-mute font-weight-bold">
-                                                            قيم وضعك
-                                                            المالي
+                                        </div>
+
+                                        <div id="accordionPanelsStayOpenExample" class="accordion-collapse collapse ">
+                                            <div class="wizard-nav border-right  px-8  px-lg-10 accordion">
+                                                <div id="panelsStayOpen-collapseOne" class="wizard-steps"
+                                                    aria-labelledby="panelsStayOpen-headingOne">
+
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-icon ng-star-inserted">
+                                                                <span><svg id="check-mark"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="20.05"
+                                                                        height="20.05" viewBox="0 0 20.05 20.05">
+                                                                        <g id="Group_215" data-name="Group 215">
+                                                                            <path id="Path_246" data-name="Path 246"
+                                                                                d="M17.113,17.113a10.024,10.024,0,1,0-14.177,0A10.023,10.023,0,0,0,17.113,17.113ZM6.431,8.493l2.254,2.254,4.938-4.934L15.37,7.56l-4.934,4.934L8.685,14.241,6.938,12.494,4.684,10.24Z"
+                                                                                fill="#12a8c0"></path>
+                                                                        </g>
+                                                                    </svg></span>
+                                                            </div>
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">
+                                                                    ساعد البنك في تجربة الدراسة
+                                                                </h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    ساعد البنك في تجربة الدراسة
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="current">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">
+                                                                    قيم وضعك
+                                                                    المالي
+                                                                </h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    قيم وضعك
+                                                                    المالي
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">التحليل
+                                                                    المالي</h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    التحليل
+                                                                    المالي</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                    data-wizard-state="">
+                                                    <div class="wizard-wrapper ng-star-inserted">
+                                                        <div class="wizard-label">
+                                                            <h3 class="wizard-title">
+                                                                بيانات طلب التمويل</h3>
+                                                            <div class="wizard-desc text-mute font-weight-bold">
+                                                                
+                                                                بيانات طلب التمويل</div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div data-wizard-type="step" class="wizard-step ng-star-inserted"
-                                                data-wizard-state="">
-                                                <div class="wizard-wrapper ng-star-inserted">
-                                                    <div class="wizard-label">
-                                                        <h3 class="wizard-title">التحليل
-                                                            المالي</h3>
-                                                        <div class="wizard-desc text-mute font-weight-bold">التحليل
-                                                            المالي</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div data-wizard-type="step" class="wizard-step ng-star-inserted"
-                                                data-wizard-state="">
-                                                <div class="wizard-wrapper ng-star-inserted">
-                                                    <div class="wizard-label">
-                                                        <h3 class="wizard-title">نتيجة التحليل
-                                                            المالي</h3>
-                                                        <div class="wizard-desc text-mute font-weight-bold">نتيجة
-                                                            التحليل المالي</div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">نتيجة التحليل
+                                                                    المالي</h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    نتيجة
+                                                                    التحليل المالي</div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -97,15 +140,13 @@
                                                 <form novalidate="" class="ng-untouched ng-pristine ng-invalid">
                                                     <div class="col-xl-6">
                                                         <div class="form-floating">
-                                                            <input  type="text" formcontrolname="monthlyIncome"
+                                                            <input type="text" formcontrolname="monthlyIncome"
                                                                 placeholder="don't remove it"
                                                                 class="form-control ng-untouched ng-pristine ng-invalid convert-to-number"
                                                                 name="monthlyIncome" id="monthlyIncome" min="0"
-                                                                max="100000" step="{{ step }}" 
-                                                                {% if
+                                                                max="100000" step="{{ step }}" {% if
                                                                 form.monthlyIncome.errors %} style="border-color: red;"
-                                                                {% endif %}
-                                                                ><label for="floatingPassword">كم
+                                                                {% endif %}><label for="floatingPassword">كم
                                                                 دخلك
                                                                 الشهري</label>
                                                         </div>
@@ -277,8 +318,18 @@
                 this.value = value;
             }
         })
-    
+
     })
+</script>
+
+<script>
+    // Toggle Accordion Item #1
+    function toggle(event) {
+        var myCollapse = document.getElementsByClassName('collapse')[0];
+        var bsCollapse = new bootstrap.Collapse(myCollapse, {
+            toggle: true
+        });
+    }
 </script>
 
 

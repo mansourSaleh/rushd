@@ -94884,7 +94884,7 @@ body {
 
     .wizard.wizard-2 .wizard-nav {
         width: 100%;
-        border-bottom: 1px solid #ebedf3
+        /* border-bottom: 1px solid #ebedf3 */
     }
 
     .wizard.wizard-2 .wizard-nav .wizard-steps .wizard-step[data-wizard-state=current]:after {
