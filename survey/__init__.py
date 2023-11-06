@@ -497,17 +497,21 @@ class Group2(Page):
      def vars_for_template(player: Player):
           if player.monthlyIncome is not None:
                 income = player.monthlyIncome
-                
-              
+               
+     
           award09Total = income * 0.09 * 60
           award07Total = income * 0.07 * 60
           award09 = income * 0.09 
           award07 = income * 0.07 
+          bounce_09 = award09Total * 0.2 + 3000
+          bounce_07 = award07Total * 0.2 + 3000
           return {
              'award09': '{:,}'.format(int(award09)),
              'award07': '{:,}'.format(int(award07)),
              'award09Total': '{:,}'.format(int(award09Total)),
              'award07Total': '{:,}'.format(int(award07Total)),
+             'bounce_09': '{:,}'.format(int(bounce_09)),
+             'bounce_07': '{:,}'.format(int(bounce_07)),
                 
           }
         
