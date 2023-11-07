@@ -499,19 +499,38 @@ class Group2(Page):
                 income = player.monthlyIncome
                
      
-          award09Total = income * 0.09 * 60
-          award07Total = income * 0.07 * 60
           award09 = income * 0.09 
+          if award09 > 1000:
+                award09 = 1000
+                
           award07 = income * 0.07 
-          bounce_09 = award09Total * 0.2 + 3000
-          bounce_07 = award07Total * 0.2 + 3000
+          if award07 > 1000:
+                award07 = 1000
+                
+        
+          award09Total = award09 * 60
+          award07Total = award07 * 60
+          
+          bounce_09 = award09 * 0.2
+          if bounce_09 > 200:
+              bounce_09 = 200 
+          
+          bounce_07 = award07Total * 0.2 
+          if bounce_07 > 200:
+                bounce_07 = 200
+                
+          totalBounce_09 = bounce_09 * 60
+          totalBounce_07 = bounce_07 * 60
+          
+          totalBounce_09 = totalBounce_09 + 3000
+          totalBounce_07 = totalBounce_07 + 3000
           return {
              'award09': '{:,}'.format(int(award09)),
              'award07': '{:,}'.format(int(award07)),
              'award09Total': '{:,}'.format(int(award09Total)),
              'award07Total': '{:,}'.format(int(award07Total)),
-             'bounce_09': '{:,}'.format(int(bounce_09)),
-             'bounce_07': '{:,}'.format(int(bounce_07)),
+             'bounce_09': '{:,}'.format(int(totalBounce_09)),
+             'bounce_07': '{:,}'.format(int(totalBounce_07)),
                 
           }
         
