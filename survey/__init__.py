@@ -206,12 +206,21 @@ class Player(BasePlayer):
         default=False,
     )
     type_of_zood = models.StringField(
-        choices=["0", "0.09", "0.07",],
+        choices=["0", "0.09", "custom"],
         label="نوع الزود",
         widget=widgets.RadioSelectHorizontal,
         default="0",
         blank=True,
         
+    )
+    custom_saving = models.IntegerField(
+        label='''
+        كم تود أن تدخر شهرياً؟
+        ''',
+        min=0,  # Set the minimum value (change as needed)
+        widget=widgets.TextInput,
+        blank=True,
+        default=0,
     )
     bank_for_zood = models.StringField(
         widget=widgets.RadioSelectHorizontal,
@@ -478,7 +487,7 @@ class Group1(Page):
 
 class Group2(Page):
      form_model = 'player'
-     form_fields = ['register_in_zood', 'endorsement', 'bank_for_zood', 'type_of_zood' ]
+     form_fields = ['register_in_zood', 'endorsement', 'bank_for_zood', 'type_of_zood', 'custom_saving' ]
      
      
      @staticmethod
@@ -503,35 +512,24 @@ class Group2(Page):
           if award09 > 1000:
                 award09 = 1000
                 
-          award07 = income * 0.07 
-          if award07 > 1000:
-                award07 = 1000
+         
                 
         
           award09Total = award09 * 60
-          award07Total = award07 * 60
           
           bounce_09 = award09 * 0.2
           if bounce_09 > 200:
               bounce_09 = 200 
           
-          bounce_07 = award07 * 0.2 
-          if bounce_07 > 200:
-                bounce_07 = 200
+         
                 
           totalBounce_09 = bounce_09 * 60
-          totalBounce_07 = bounce_07 * 60
           
           totalBounce_09 = totalBounce_09 + 3000
-          totalBounce_07 = totalBounce_07 + 3000
           return {
              'award09': '{:,}'.format(int(award09)),
-             'award07': '{:,}'.format(int(award07)),
              'award09Total': '{:,}'.format(int(award09Total)),
-             'award07Total': '{:,}'.format(int(award07Total)),
-             'bounce_09': '{:,}'.format(int(totalBounce_09)),
-             'bounce_07': '{:,}'.format(int(totalBounce_07)),
-                
+             'bounce_09': '{:,}'.format(int(totalBounce_09)),                
           }
         
      @staticmethod
@@ -542,13 +540,14 @@ class Group2(Page):
              player.register_in_zood = True
              must_aggree = True
              
-         if player.type_of_zood == "0.07":
+         if player.type_of_zood == "custom":
              player.register_in_zood = True  
              must_aggree = True
              
          if player.type_of_zood == "0":
              player.register_in_zood = False
              must_aggree = False
+             
              
          if not player.endorsement and must_aggree:
             player.participant.vars['dropout_fields'] = ['endorsement']
@@ -561,6 +560,9 @@ class Group2(Page):
          if values['type_of_zood'] != "0":
              player.register_in_zood = True
              must_aggree = True
+             
+         if values['type_of_zood'] == "custom" and values["custom_saving"] is None:
+             return 'يجب تعبئة قيمة الأدخار'
          
          if not values['endorsement'] and must_aggree:
             return 'يجب الموافقة على الإقرار  قبل المتابعة'

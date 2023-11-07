@@ -8,17 +8,16 @@
         <div class="d-flex flex-column flex-row-fluid wrapper">
             <div class="content d-flex flex-column flex-column-fluid">
                 <div class="subheader py-2 py-lg-6 subheader-transparent">
-                    <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap" >
-                        <div class="d-flex align-items-center flex-wrap mr-1" >
-                            <div class="d-flex align-items-baseline flex-wrap " >
-                                <h5 class="text-dark font-weight-bold my-1 "> 
-                                     </h5>
-                                
+                    <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                        <div class="d-flex align-items-center flex-wrap mr-1">
+                            <div class="d-flex align-items-baseline flex-wrap ">
+                                <h5 class="text-dark font-weight-bold my-1 ">
+                                </h5>
+
                             </div>
                         </div>
-                        <img src="{% static 'icon.jpeg' %}"
-                            style="width: 100px; height: 100px; object-fit: contain; filter: drop-shadow(#00000010 1rem 1rem 10px);"
-                        />
+                        <img src="{% static 'logoGray.png' %}"
+                            style="width: 100px; height: 100px; object-fit: contain;  " />
                     </div>
                 </div>
                 <div class="d-flex flex-column-fluid">
@@ -237,32 +236,52 @@
                                                                                 type="radio"
                                                                                 formcontrolname="type_of_zood"
                                                                                 for="type_of_zood"
-                                                                                class="ng-untouched ng-pristine ng-valid type_of_zood"
-                                                                                value="0.07" name="type_of_zood">
+                                                                                class="ng-untouched ng-pristine ng-valid type_of_zood custom_saving_parent"
+                                                                                value="custom" name="type_of_zood">
                                                                             <span class="border-primary"
                                                                                 style="margin-left: 7px;">
                                                                             </span>
                                                                             <div style=" width: 100%">
 
-                                                                                أرغب الادخار حسب هذا الجدول:
+                                                                                أرغب الادخار بمبلغ آخر:
 
                                                                                 <table
                                                                                     style="margin-top: 0; padding-top:0; width: 100%;">
                                                                                     <tr>
-                                                                                        <td>المبلغ الشهري</td>
-                                                                                        <td>{{award07}}
-                                                                                            ريال
+                                                                                        <td>مبلغ الادخار الشهري</td>
+                                                                                        <td>
+                                                                                            <div class="form-floating">
+                                                                                                <input type="text"
+                                                                                                disabled
+                                                                                                    placeholder="don't remove it"
+                                                                                                    class="form-control ng-untouched ng-pristine ng-invalid convert-to-number"
+                                                                                                    id="custom_saving"
+                                                                                                    style="height: 10px; width: 50px;"
+                                                                                                    name="custom_saving"
+                                                                                                    {% if
+                                                                                                    form.custom_saving.errors
+                                                                                                    %}
+                                                                                                    style="border-color: red;"
+                                                                                                    {% endif %}>
+                                                                                                    
+                                                                                                </div>
+                                                                                            {{ if
+                                                                                            form.custom_saving.errors }}
+                                                                                            <div class="text-danger">{{
+                                                                                                form.custom_saving.errors.0
+                                                                                                }}</div>
+                                                                                            {{ endif }}
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td>المجموع نهاية الفترة </td>
-                                                                                        <td>{{award07Total}}
+                                                                                        <td id="total_save">
                                                                                             ريال
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td>الحوافز من البنك</td>
-                                                                                        <td>{{ bounce_07 }}
+                                                                                        <td id="total_bounce">
                                                                                             ريال
                                                                                         </td>
                                                                                 </table>
@@ -401,18 +420,33 @@
     const endorsment = document.getElementById("endorsment");
     const endorsementInput = document.getElementById("endorsementInput");
 
-
-
+    const total_save = document.getElementById("total_save");
+    const total_bounce = document.getElementById("total_bounce")
+    const custom_saving = document.querySelector("#custom_saving");
     const type_of_zoods = document.querySelectorAll(".type_of_zood");
     const next = document.getElementById("Next");
-    console.log("user group is 2")
     if (type_of_zoods.length) {
         type_of_zoods.forEach(type_of_zood => {
             type_of_zood.addEventListener("change", function () {
                 if (type_of_zood.checked && type_of_zood.value === "0") {
                     endorsment.style.display = "none";
+                    custom_saving.disabled = true;
+                    custom_saving.value = "";
+                    total_bounce.innerHTML = "ريال";
+                    total_save.innerHTML = "ريال";
                 } else {
                     endorsment.style.display = "flex";
+                    console.log("type_of_zood.checked", type_of_zood.checked, type_of_zood.value)
+                    if(type_of_zood.checked && type_of_zood.value === "custom"){
+                        custom_saving.disabled = false;
+                    }else{
+                      if(type_of_zood.id !== "endorsementInput"){
+                          custom_saving.disabled = true;
+                          custom_saving.value = "";
+                          total_bounce.innerHTML = "ريال";
+                          total_save.innerHTML = "ريال";
+                        }
+                    }
                     if (endorsementInput.checked) {
                     } else {
                     }
@@ -430,10 +464,73 @@
         }
     }
 
+    // check the custom_saving value change;
+   
+   
+    custom_saving.addEventListener('change', function() {
+        var value = this.value;
+        let arabic = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g];
+        let english = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        value = value.toString();
+        for (var i = 0; i < 10; i++) {
+            value = value.replace(arabic[i], english[i]);
+        }
+        value = parseInt(value);
+        
+        if(value){
+            total_save.innerHTML = `${value * 60}` + " ريال";
+            let max = 12000;
+            let bounc = value * 60 * 0.2;
+            if(bounc > max){
+                bounc = max;
+            }
+            total_bounce.innerHTML = bounc + 3000 + " ريال";
+        }
+    })
 
 
 
 </script>
+
+<script>
+    // get all input with class of convert-to-number;
+    var inputs = document.querySelectorAll('.convert-to-number');
+    // lesten to on change event
+    inputs.forEach(input => {
+        input.addEventListener('change', function () {
+            // convert the value to number
+            var value = this.value;
+            // convert arabic numbers to english
+            let arabic = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g];
+            let english = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            value = value.toString();
+            for (var i = 0; i < 10; i++) {
+                value = value.replace(arabic[i], english[i]);
+            }
+           
+            value = parseFloat(value);
+            // check if the value is not a number
+            if (isNaN(value)) {
+                // set the value to 0
+                this.value = 0;
+            } else {
+                // set the value to the number
+                this.value = value;
+            }
+        })
+
+    })
+</script>
+
+<!-- <script>
+    const custom_saving_parent = document.querySelector(".custom_saving_parent");
+    
+    const type_of_zood = document.querySelectorAll(".type_of_zood");
+    custom_saving_parent.addEventListener('change', function(e){
+        var value = this.value;
+        
+    })
+</script> -->
 
 <script>
     // Toggle Accordion Item #1
