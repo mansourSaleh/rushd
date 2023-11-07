@@ -515,7 +515,7 @@ class Group2(Page):
           if bounce_09 > 200:
               bounce_09 = 200 
           
-          bounce_07 = award07Total * 0.2 
+          bounce_07 = award07 * 0.2 
           if bounce_07 > 200:
                 bounce_07 = 200
                 
