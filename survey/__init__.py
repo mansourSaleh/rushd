@@ -492,23 +492,22 @@ class Group2(Page):
      
      @staticmethod
      def is_displayed(player: Player):
-        # month_income = player.monthlyIncome
-        # if month_income is None or month_income > 20000:
-        #     return False
+        month_income = player.monthlyIncome
+        if month_income is None or month_income > 20000:
+            return False
         
-        # if player.user_group != 2:
-        #     return False
+        if player.user_group != 2:
+            return False
         
         return True
     
     
      @staticmethod
      def vars_for_template(player: Player):
-        
-        #   if player.monthlyIncome is not None:
-        #         income = player.monthlyIncome
+          if player.monthlyIncome is not None:
+                income = player.monthlyIncome
                
-          income = 10000
+     
           award09 = income * 0.09 
           if award09 > 1000:
                 award09 = 1000
@@ -613,4 +612,4 @@ class Result(Page):
 
 
 
-page_sequence = [Group2, Intro, FinancialAnalysis,  PersonalAnalysis ,Freelance,  Productive_Family,  FinancialRequest, PaymentAmount,Group1, Group2 , Group3, Result, ]
+page_sequence = [Intro, FinancialAnalysis,  PersonalAnalysis ,Freelance,  Productive_Family,  FinancialRequest, PaymentAmount,Group1, Group2 , Group3, Result, ]
