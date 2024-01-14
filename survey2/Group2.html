@@ -1,0 +1,544 @@
+{{ extends "global/Page.html" }}
+{{ extends "base.html" }}
+
+{{ block content }}
+
+<div class="d-flex flex-column flex-root">
+    <div class="d-flex flex-row flex-column-fluid page">
+        <div class="d-flex flex-column flex-row-fluid wrapper">
+            <div class="content d-flex flex-column flex-column-fluid">
+                <div class="subheader py-2 py-lg-6 subheader-transparent">
+                    <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                        <div class="d-flex align-items-center flex-wrap mr-1">
+                            <div class="d-flex align-items-baseline flex-wrap ">
+                                <h5 class="text-dark font-weight-bold my-1 ">
+                                </h5>
+
+                            </div>
+                        </div>
+                        <img src="{% static 'logoGray.png' %}"
+                            style="width: 100px; height: 100px; object-fit: contain;  " />
+                    </div>
+                </div>
+                <div class="d-flex flex-column-fluid">
+                    <div class="container">
+                        <div class="card card-custom">
+                            <div class="card-body p-0">
+                                <div data-wizard-state="step-first" data-wizard-clickable="false"
+                                    class="wizard wizard-2">
+                                    <div onclick="toggle(event)">
+
+                                        <div class="wizard-nav border-right pt-8 px-8 pt-lg-20 px-lg-10 ">
+                                            <div class="wizard-steps">
+                                                <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                    data-wizard-state="current">
+                                                    <div class="wizard-wrapper ng-star-inserted">
+
+                                                        <div class="wizard-label">
+                                                            <h3 class="wizard-title">
+
+                                                                بيانات طلب التمويل
+                                                            </h3>
+                                                            <div class="wizard-desc text-mute font-weight-bold">
+                                                                بيانات طلب التمويل
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="accordionPanelsStayOpenExample" class="accordion-collapse collapse ">
+                                            <div class="wizard-nav border-right  px-8  px-lg-10 accordion">
+                                                <div id="panelsStayOpen-collapseOne" class="wizard-steps"
+                                                    aria-labelledby="panelsStayOpen-headingOne">
+
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-icon ng-star-inserted">
+                                                                <span><svg id="check-mark"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="20.05"
+                                                                        height="20.05" viewBox="0 0 20.05 20.05">
+                                                                        <g id="Group_215" data-name="Group 215">
+                                                                            <path id="Path_246" data-name="Path 246"
+                                                                                d="M17.113,17.113a10.024,10.024,0,1,0-14.177,0A10.023,10.023,0,0,0,17.113,17.113ZM6.431,8.493l2.254,2.254,4.938-4.934L15.37,7.56l-4.934,4.934L8.685,14.241,6.938,12.494,4.684,10.24Z"
+                                                                                fill="#12a8c0"></path>
+                                                                        </g>
+                                                                    </svg></span>
+                                                            </div>
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">
+                                                                    ساعد البنك في تجربة الدراسة
+                                                                </h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    ساعد البنك في تجربة الدراسة
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-icon ng-star-inserted">
+                                                                <span><svg id="check-mark"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="20.05"
+                                                                        height="20.05" viewBox="0 0 20.05 20.05">
+                                                                        <g id="Group_215" data-name="Group 215">
+                                                                            <path id="Path_246" data-name="Path 246"
+                                                                                d="M17.113,17.113a10.024,10.024,0,1,0-14.177,0A10.023,10.023,0,0,0,17.113,17.113ZM6.431,8.493l2.254,2.254,4.938-4.934L15.37,7.56l-4.934,4.934L8.685,14.241,6.938,12.494,4.684,10.24Z"
+                                                                                fill="#12a8c0"></path>
+                                                                        </g>
+                                                                    </svg></span>
+                                                            </div>
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">
+                                                                    قيم وضعك
+                                                                    المالي
+                                                                </h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    قيم وضعك
+                                                                    المالي
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-icon ng-star-inserted">
+                                                                <span><svg id="check-mark"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="20.05"
+                                                                        height="20.05" viewBox="0 0 20.05 20.05">
+                                                                        <g id="Group_215" data-name="Group 215">
+                                                                            <path id="Path_246" data-name="Path 246"
+                                                                                d="M17.113,17.113a10.024,10.024,0,1,0-14.177,0A10.023,10.023,0,0,0,17.113,17.113ZM6.431,8.493l2.254,2.254,4.938-4.934L15.37,7.56l-4.934,4.934L8.685,14.241,6.938,12.494,4.684,10.24Z"
+                                                                                fill="#12a8c0"></path>
+                                                                        </g>
+                                                                    </svg></span>
+                                                            </div>
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">التحليل
+                                                                    المالي</h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    التحليل
+                                                                    المالي</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="current">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">
+                                                                    بيانات طلب التمويل</h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+
+                                                                    بيانات طلب التمويل</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">نتيجة التحليل
+                                                                    المالي</h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    نتيجة
+                                                                    التحليل المالي</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-wizard-state="step-first" data-wizard-clickable="true"
+                                        class="wizard-body wizard wizard-3">
+
+                                        <div class="row justify-content-center py-10 px-8 py-lg-12 px-lg-10">
+                                            <div class="col-xl-12 col-xxl-12">
+
+
+                                                <form novalidate="" class="ng-untouched ng-pristine ng-invalid">
+                                                    <div class="row m-4">
+                                                        <div style="background-color: rgba(12,41,71); border-radius: 10px;"
+                                                            class="text-left p-4 mb-8 good-result">
+                                                            <h4 class="m-2 d-inline" style="color: rgba(217,156,42)">
+                                                                عزيزي العميل أنت مؤهل للانضمام للتقديم على برنامج زود
+                                                                الادخاري
+                                                                والاستفادة من مميزاته
+                                                            </h4>
+
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                    <div class="wizard-label m-4 text-dark ng-star-inserted ">
+                                                        <div class="row">
+                                                            <p>بناء على دخلك الشهري، يمكن اختيار أحد الخيارات التالية:
+                                                            </p>
+                                                        </div>
+                                                        <div class="row" style="justify-content: space-between;">
+                                                            <div class="col-xl-5 mt-5 mb-8 br-1rem font-size-lg ">
+                                                                <div>
+                                                                    <div class="bg-light  br-1rem font-size-lg">
+
+                                                                        <label
+                                                                            class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder bg-light"
+                                                                            style="padding-top: 10px; padding-bottom: 10px; border-radius: 10px; padding-right: 7px; padding-left: 7px;"><input
+                                                                                type="radio"
+                                                                                formcontrolname="type_of_zood"
+                                                                                for="type_of_zood"
+                                                                                class="ng-untouched ng-pristine ng-valid type_of_zood"
+                                                                                value="0.09" name="type_of_zood">
+                                                                            <span class="border-primary"
+                                                                                style="margin-left: 7px;">
+                                                                            </span>
+                                                                            <div style=" width: 100%">
+
+                                                                                أرغب الادخار حسب الجدول التالي:
+
+                                                                                <table
+                                                                                    style="margin-top: 0; padding-top:0; width: 100%;">
+                                                                                    <tr>
+                                                                                        <td>المبلغ الشهري</td>
+                                                                                        <td>{{award09}}
+                                                                                            ريال
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>المجموع نهاية الفترة </td>
+                                                                                        <td>{{award09Total}}
+                                                                                            ريال
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>الحوافز من البنك</td>
+                                                                                        <td>{{ bounce_09 }}
+                                                                                            ريال
+                                                                                        </td>
+                                                                                </table>
+
+                                                                            </div>
+                                                                        </label>
+                                                                    </div>
+
+                                                                    <div class="bg-light mt-4  br-1rem font-size-lg">
+
+                                                                        <label
+                                                                            class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder bg-light"
+                                                                            style="padding-top: 10px; padding-bottom: 10px; border-radius: 10px; padding-right: 7px; padding-left: 7px;"><input
+                                                                                type="radio"
+                                                                                formcontrolname="type_of_zood"
+                                                                                for="type_of_zood"
+                                                                                class="ng-untouched ng-pristine ng-valid type_of_zood custom_saving_parent"
+                                                                                value="custom" name="type_of_zood">
+                                                                            <span class="border-primary"
+                                                                                style="margin-left: 7px;">
+                                                                            </span>
+                                                                            <div style=" width: 100%">
+
+                                                                                أرغب الادخار حسب الجدول التالي:
+                                                                                <table
+                                                                                    style="margin-top: 0; padding-top:0; width: 100%;">
+                                                                                    <tr>
+                                                                                        <td>مبلغ الادخار الشهري</td>
+                                                                                        <td>
+                                                                                            <div class="form-floating">
+                                                                                                <input type="text"
+                                                                                                disabled
+                                                                                                    placeholder="don't remove it"
+                                                                                                    class="form-control ng-untouched ng-pristine ng-invalid convert-to-number"
+                                                                                                    id="custom_saving"
+                                                                                                    style="height: 10px; width: 50px;"
+                                                                                                    name="custom_saving"
+                                                                                                    {% if
+                                                                                                    form.custom_saving.errors
+                                                                                                    %}
+                                                                                                    style="border-color: red;"
+                                                                                                    {% endif %}>
+                                                                                                    
+                                                                                                </div>
+                                                                                            {{ if
+                                                                                            form.custom_saving.errors }}
+                                                                                            <div class="text-danger">{{
+                                                                                                form.custom_saving.errors.0
+                                                                                                }}</div>
+                                                                                            {{ endif }}
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>المجموع نهاية الفترة </td>
+                                                                                        <td id="total_save">
+                                                                                            ريال
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>الحوافز من البنك</td>
+                                                                                        <td id="total_bounce">
+                                                                                            ريال
+                                                                                        </td>
+                                                                                </table>
+
+                                                                            </div>
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="bg-light mt-4  br-1rem font-size-lg">
+
+                                                                        <label
+                                                                            class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder bg-light"
+                                                                            style="padding-top: 10px; padding-bottom: 10px; border-radius: 10px; padding-right: 7px; padding-left: 7px;"><input
+                                                                                type="radio"
+                                                                                formcontrolname="type_of_zood"
+                                                                                for="type_of_zood"
+                                                                                class="ng-untouched ng-pristine ng-valid type_of_zood"
+                                                                                value="0" name="type_of_zood">
+                                                                            <span class="border-primary"
+                                                                                style="margin-left: 7px;">
+                                                                            </span>
+                                                                            لا أرغب بالادخار
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+
+                                                            <div class="col-xl-4 mt-5 mb-8 p-6 br-1rem font-size-lg checkbox-inline"
+                                                                style="justify-content: center;">
+                                                                <img src="{% static 'zood.png' %}"
+                                                                    style="height: 100px; width: 200px;  " />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+
+                                                    <div id="endorsment" style="display: none;" class="row m-1">
+                                                        <div>
+
+                                                            <div class="bg-light pb-5" style="border-radius: 10px;">
+                                                                <label
+                                                                    class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder bg-light"
+                                                                    style="padding-top: 10px; padding-bottom: 10px; border-radius: 10px; padding-right: 7px; padding-left: 7px;"><input
+                                                                        type="radio" formcontrolname="endorsement"
+                                                                        id="endorsementInput" type="checkbox"
+                                                                        name="endorsement" value="True"
+                                                                        for="endorsement"
+                                                                        class="ng-untouched ng-pristine ng-valid type_of_zood">
+                                                                    <span class="border-primary"
+                                                                        style="margin-left: 7px;">
+                                                                    </span>
+                                                                    إقرار
+
+                                                                </label>
+                                                                <ol class="text-dark">
+                                                                    <li>سيتم خصم 6000 ريال من أصل مبلغ التمويل ويتطلب
+                                                                        منكم فتح حساب إدخاري في أحد البنوك الشريكة
+                                                                        للحصول على المبلغ في حسابكم
+                                                                        الإدخاري</li>
+                                                                    <li>سيتم إيداع مبلغ التمويل بعد خصم ال 6000 في
+                                                                        حسابكم الجاري</li>
+                                                                    <li>سيتم الإنتظار لمدة 5 أيام وفي حال عدم فتح حساب
+                                                                        إدخاري سيتم إيداع المبلغ في حسابكم الجاري</li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="row m-1">
+                                                        <div>
+                                                            <p>الرجاء الاختيار:</p>
+                                                            <div
+                                                                style="display: flex; justify-content:space-between; align-items: center; flex-wrap: wrap;">
+                                                                <label
+                                                                    class=" font-weight-bold text-dark text-center bg-light  p-5"
+                                                                    style="border-radius: 10px;">
+                                                                    <img src="{% static 'jazee.png' %}"
+                                                                        style="height: 100px; width: 200px; margin-bottom: 10px; " />
+                                                                    <input type="radio" name="bank_for_zood" value="3">
+
+                                                                </label>
+                                                                <label
+                                                                    class=" font-weight-bold text-dark text-center bg-light p-5"
+                                                                    style="border-radius: 10px;">
+                                                                    <img src="{% static 'enma.png' %}"
+                                                                        style="height: 100px; width: 200px; margin-bottom: 10px; " />
+                                                                    <input type="radio" name="bank_for_zood" value="2">
+
+                                                                </label>
+                                                                <label
+                                                                    class=" font-weight-bold text-dark text-center bg-light p-5"
+                                                                    style="border-radius: 10px;">
+                                                                    <img src="{% static 'arab.jpeg' %}"
+                                                                        style="height: 100px; width: 200px; margin-bottom: 10px; " />
+                                                                    <input type="radio" name="bank_for_zood" value="1">
+
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                    <div class="d-flex justify-content-between border-top mt-5 pt-10">
+                                                        <button id="Next"
+                                                            class="btn btn-primary font-weight-bolder text-uppercase px-10 o-tree-btn-next">
+                                                            تأكيد</button>
+
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // get the monthly_installment_amount value;
+    const endorsment = document.getElementById("endorsment");
+    const endorsementInput = document.getElementById("endorsementInput");
+
+    const total_save = document.getElementById("total_save");
+    const total_bounce = document.getElementById("total_bounce")
+    const custom_saving = document.querySelector("#custom_saving");
+    const type_of_zoods = document.querySelectorAll(".type_of_zood");
+    const next = document.getElementById("Next");
+    if (type_of_zoods.length) {
+        type_of_zoods.forEach(type_of_zood => {
+            type_of_zood.addEventListener("change", function () {
+                if (type_of_zood.checked && type_of_zood.value === "0") {
+                    endorsment.style.display = "none";
+                    custom_saving.disabled = true;
+                    custom_saving.value = "";
+                    total_bounce.innerHTML = "ريال";
+                    total_save.innerHTML = "ريال";
+                } else {
+                    endorsment.style.display = "flex";
+                    console.log("type_of_zood.checked", type_of_zood.checked, type_of_zood.value)
+                    if(type_of_zood.checked && type_of_zood.value === "custom"){
+                        custom_saving.disabled = false;
+                    }else{
+                      if(type_of_zood.id !== "endorsementInput"){
+                          custom_saving.disabled = true;
+                          custom_saving.value = "";
+                          total_bounce.innerHTML = "ريال";
+                          total_save.innerHTML = "ريال";
+                        }
+                    }
+                    if (endorsementInput.checked) {
+                    } else {
+                    }
+
+                }
+            });
+        })
+        if (endorsementInput) {
+            endorsementInput.addEventListener("change", function () {
+                console.log("endorsment.checked", endorsementInput.checked)
+                if (endorsementInput.checked) {
+                } else {
+                }
+            });
+        }
+    }
+
+    // check the custom_saving value change;
+   
+   
+    custom_saving.addEventListener('change', function() {
+        var value = this.value;
+        let arabic = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g];
+        let english = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        value = value.toString();
+        for (var i = 0; i < 10; i++) {
+            value = value.replace(arabic[i], english[i]);
+        }
+        value = parseInt(value);
+        
+        if(value){
+            total_save.innerHTML = `${value * 60}` + " ريال";
+            let max = 12000;
+            let bounc = value * 60 * 0.2;
+            if(bounc > max){
+                bounc = max;
+            }
+            total_bounce.innerHTML = bounc + 3000 + " ريال";
+        }
+    })
+
+
+
+</script>
+
+<script>
+    // get all input with class of convert-to-number;
+    var inputs = document.querySelectorAll('.convert-to-number');
+    // lesten to on change event
+    inputs.forEach(input => {
+        input.addEventListener('change', function () {
+            // convert the value to number
+            var value = this.value;
+            // convert arabic numbers to english
+            let arabic = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g];
+            let english = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            value = value.toString();
+            for (var i = 0; i < 10; i++) {
+                value = value.replace(arabic[i], english[i]);
+            }
+           
+            value = parseFloat(value);
+            // check if the value is not a number
+            if (isNaN(value)) {
+                // set the value to 0
+                this.value = 0;
+            } else {
+                // set the value to the number
+                this.value = value;
+            }
+        })
+
+    })
+</script>
+
+<!-- <script>
+    const custom_saving_parent = document.querySelector(".custom_saving_parent");
+    
+    const type_of_zood = document.querySelectorAll(".type_of_zood");
+    custom_saving_parent.addEventListener('change', function(e){
+        var value = this.value;
+        
+    })
+</script> -->
+
+<script>
+    // Toggle Accordion Item #1
+    function toggle(event) {
+        var myCollapse = document.getElementsByClassName('collapse')[0];
+        var bsCollapse = new bootstrap.Collapse(myCollapse, {
+            toggle: true
+        });
+    }
+</script>
+
+{{ endblock }}

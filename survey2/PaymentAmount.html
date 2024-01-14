@@ -1,0 +1,423 @@
+{{ extends "global/Page.html" }}
+{{ extends "base.html" }}
+
+{{ block content }}
+
+<div class="d-flex flex-column flex-root">
+    <div class="d-flex flex-row flex-column-fluid page">
+        <div class="d-flex flex-column flex-row-fluid wrapper">
+            <div class="content d-flex flex-column flex-column-fluid">
+                <div class="subheader py-2 py-lg-6 subheader-transparent">
+                    <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap" >
+                        <div class="d-flex align-items-center flex-wrap mr-1" >
+                            <div class="d-flex align-items-baseline flex-wrap " >
+                                <h5 class="text-dark font-weight-bold my-1 "> 
+                                     </h5>
+                                
+                            </div>
+                        </div>
+                        <img src="{% static 'logoGray.png' %}"
+                            style="width: 100px; height: 100px; object-fit: contain;  "
+                        />
+                    </div>
+                </div>
+                <div class="d-flex flex-column-fluid">
+                    <div class="container">
+                        <div class="card card-custom">
+                            <div class="card-body p-0">
+                                <div data-wizard-state="step-first" data-wizard-clickable="false"
+                                    class="wizard wizard-2">
+                                    <div onclick="toggle(event)">
+
+                                        <div class="wizard-nav border-right pt-8 px-8 pt-lg-20 px-lg-10 ">
+                                            <div class="wizard-steps">
+                                                <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                    data-wizard-state="current">
+                                                    <div class="wizard-wrapper ng-star-inserted">
+
+                                                        <div class="wizard-label">
+                                                            <h3 class="wizard-title">
+                                                                
+                                                                بيانات طلب التمويل
+                                                            </h3>
+                                                            <div class="wizard-desc text-mute font-weight-bold">
+                                                                بيانات طلب التمويل
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="accordionPanelsStayOpenExample" class="accordion-collapse collapse ">
+                                            <div class="wizard-nav border-right  px-8  px-lg-10 accordion">
+                                                <div id="panelsStayOpen-collapseOne" class="wizard-steps"
+                                                    aria-labelledby="panelsStayOpen-headingOne">
+
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-icon ng-star-inserted">
+                                                                <span><svg id="check-mark"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="20.05"
+                                                                        height="20.05" viewBox="0 0 20.05 20.05">
+                                                                        <g id="Group_215" data-name="Group 215">
+                                                                            <path id="Path_246" data-name="Path 246"
+                                                                                d="M17.113,17.113a10.024,10.024,0,1,0-14.177,0A10.023,10.023,0,0,0,17.113,17.113ZM6.431,8.493l2.254,2.254,4.938-4.934L15.37,7.56l-4.934,4.934L8.685,14.241,6.938,12.494,4.684,10.24Z"
+                                                                                fill="#12a8c0"></path>
+                                                                        </g>
+                                                                    </svg></span>
+                                                            </div>
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">
+                                                                    ساعد البنك في تجربة الدراسة
+                                                                </h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    ساعد البنك في تجربة الدراسة
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-icon ng-star-inserted">
+                                                                <span><svg id="check-mark"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="20.05"
+                                                                        height="20.05" viewBox="0 0 20.05 20.05">
+                                                                        <g id="Group_215" data-name="Group 215">
+                                                                            <path id="Path_246" data-name="Path 246"
+                                                                                d="M17.113,17.113a10.024,10.024,0,1,0-14.177,0A10.023,10.023,0,0,0,17.113,17.113ZM6.431,8.493l2.254,2.254,4.938-4.934L15.37,7.56l-4.934,4.934L8.685,14.241,6.938,12.494,4.684,10.24Z"
+                                                                                fill="#12a8c0"></path>
+                                                                        </g>
+                                                                    </svg></span>
+                                                            </div>
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">
+                                                                    قيم وضعك
+                                                                    المالي
+                                                                </h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    قيم وضعك
+                                                                    المالي
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-icon ng-star-inserted">
+                                                                <span><svg id="check-mark"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="20.05"
+                                                                        height="20.05" viewBox="0 0 20.05 20.05">
+                                                                        <g id="Group_215" data-name="Group 215">
+                                                                            <path id="Path_246" data-name="Path 246"
+                                                                                d="M17.113,17.113a10.024,10.024,0,1,0-14.177,0A10.023,10.023,0,0,0,17.113,17.113ZM6.431,8.493l2.254,2.254,4.938-4.934L15.37,7.56l-4.934,4.934L8.685,14.241,6.938,12.494,4.684,10.24Z"
+                                                                                fill="#12a8c0"></path>
+                                                                        </g>
+                                                                    </svg></span>
+                                                            </div>
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">التحليل
+                                                                    المالي</h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    التحليل
+                                                                    المالي</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="current">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">
+                                                                    بيانات طلب التمويل</h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    
+                                                                    بيانات طلب التمويل</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">نتيجة التحليل
+                                                                    المالي</h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    نتيجة
+                                                                    التحليل المالي</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-wizard-state="step-first" data-wizard-clickable="true"
+                                        class="wizard-body wizard wizard-3">
+
+                                        <div class="row justify-content-center py-10 px-8 py-lg-12 px-lg-10">
+                                            <div class="col-xl-12 col-xxl-12">
+                                                {% load otree static %}
+
+                                                <form novalidate="" class="ng-untouched ng-pristine ng-invalid">
+
+
+                                                    <!--job -->
+                                                    <div class="row">
+                                                        <div class="col-xl-6 my-3 ng-star-inserted">
+                                                            <div class="form-floating">
+                                                                <label for="floatingPassword">اختر
+                                                                    القسط الشهري
+                                                                </label>
+                                                                <select id="monthly_installment_amount"
+                                                                     {% if
+                                                                    form.monthly_installment_amount.errors %}
+                                                                    style="border-color: red;" {% endif %}
+                                                                    name="monthly_installment_amount"
+                                                                    placeholder="placeholder"
+                                                                    class="form-control ng-pristine ng-invalid ng-touched">
+                                                                    <option disabled="" selected="" value="">الرجاء
+                                                                        الاختيار
+                                                                    </option>
+                                                                    <option value="500" class="ng-star-inserted">
+                                                                        500 ريال شهري</option>
+                                                                    <option value="600" class="ng-star-inserted">
+                                                                        600 ريال شهري</option>
+                                                                    <option value="700" class="ng-star-inserted">
+                                                                        700 ريال شهري</option>
+                                                                    <option value="800" class="ng-star-inserted">
+                                                                        800 ريال شهري</option>
+                                                                    <option value="900" class="ng-star-inserted">
+                                                                        900 ريال شهري</option>
+                                                                    <option value="1000" class="ng-star-inserted">
+                                                                        1000 ريال شهري</option>
+                                                                    <option value="1100" class="ng-star-inserted">
+                                                                        1100 ريال شهري</option>
+                                                                    <option value="1200" class="ng-star-inserted">
+                                                                        1200 ريال شهري</option>
+                                                                    <option value="1300" class="ng-star-inserted">
+                                                                        1300 ريال شهري</option>
+                                                                    <option value="1400" class="ng-star-inserted">
+                                                                        1400 ريال شهري</option>
+                                                                    <option value="1500" class="ng-star-inserted">
+                                                                        1500 ريال شهري</option>
+                                                                </select>
+
+                                                                {{ if form.monthly_installment_amount.errors }}
+                                                                <div class="text-danger">{{
+                                                                    form.monthly_installment_amount.errors.0 }}
+                                                                </div>
+                                                                {{ endif }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6 my-3 ng-star-inserted">
+                                                            <div class="form-floating">
+                                                                <label for="floatingPassword">
+                                                                    مبلغ التمويل
+                                                                </label>
+                                                                <select  name="aa"
+                                                                disabled
+                                                                    placeholder="placeholder"
+                                                                    class="form-control ng-pristine ng-invalid ng-touched">
+                                                                    <option id="totalHere" disabled="" selected="" value="">
+                                                                       
+                                                                       
+                                                                    </option>
+
+
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row m-4">
+                                                        <div style="background-color: rgba(12,41,71); border-radius: 10px;"
+                                                            class="text-left p-4 mb-8 good-result">
+                                                            <h4 class="m-2 d-inline" style="color: rgba(217,156,42)">
+                                                                عزيزي العميل أنت مؤهل للانضمام للتقديم على برنامج زود
+                                                                الادخاري
+                                                                والاستفادة من مميزاته
+                                                            </h4>
+
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="wizard-label m-4 text-dark ng-star-inserted ">
+                                                        <div class="row" style="justify-content: space-between;">
+                                                            <div class="col-xl-5 mt-5 mb-8 br-1rem font-size-lg ">
+                                                                <div class="  br-1rem font-size-lg">
+                                                                    <label
+                                                                        class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder bg-light"
+                                                                        style="padding-top: 10px; padding-bottom: 10px; border-radius: 10px; padding-right: 7px; padding-left: 7px;"><input
+                                                                            id="register_in_zood"
+                                                                            name="register_in_zood" type="checkbox"
+                                                                            formcontrolname="register_in_zood"
+                                                                            for="register_in_zood"
+                                                                            class="ng-untouched ng-pristine ng-valid"><span
+                                                                            class="border-primary"
+                                                                            style="margin-left: 7px;"></span>هل تود
+                                                                        الاشتراك في
+                                                                        برنامج
+                                                                        زود</label>
+                                                                </div>
+                                                                <p class=" mt-2">
+                                                                    حوافز مالية تصل حتى {{ award_default }} ريال من قيمة
+                                                                    التمويل
+                                                                </p>
+                                                            </div>
+
+
+                                                            <div class="col-xl-4 mt-5 mb-8 bg-light p-6 br-1rem font-size-lg checkbox-inline"
+                                                                style="justify-content: center;">
+                                                                <img src="{% static 'zood.png' %}"
+                                                                    style="height: 100px; width: 200px;  " />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+
+
+
+
+
+                                                    <div id="endorsmentContainer" style="display: none;" class="row m-1">
+                                                        <div>
+
+                                                            <div class="bg-light pb-5" style="border-radius: 10px;">
+                                                                <label
+                                                                    class="checkbox checkbox-rounded checkbox-lg text-dark-75 font-size-xl font-weight-bolder bg-light"
+                                                                    style="padding-top: 10px; padding-bottom: 10px; border-radius: 10px; padding-right: 7px; padding-left: 7px;"><input
+                                                                        type="radio" formcontrolname="endorsement"
+                                                                        id="endorsementInput" type="checkbox"
+                                                                        name="endorsement"
+                                                                        id="endorsement" value="True"
+                                                                        for="endorsement"
+                                                                        class="ng-untouched ng-pristine ng-valid type_of_zood">
+                                                                    <span class="border-primary"
+                                                                        style="margin-left: 7px;">
+                                                                    </span>
+                                                                    إقرار
+
+                                                                </label>
+                                                                <ol class="text-dark">
+                                                                    <li>سيتم خصم 6000 ريال من أصل مبلغ التمويل ويتطلب
+                                                                        منكم فتح حساب إدخاري في أحد البنوك الشريكة
+                                                                        للحصول على المبلغ في حسابكم
+                                                                        الإدخاري</li>
+                                                                    <li>سيتم إيداع مبلغ التمويل بعد خصم ال 6000 في
+                                                                        حسابكم الجاري</li>
+                                                                    <li>سيتم الإنتظار لمدة 5 أيام وفي حال عدم فتح حساب
+                                                                        إدخاري سيتم إيداع المبلغ في حسابكم الجاري</li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="row m-1">
+                                                        <div>
+                                                            <p>الرجاء الاختيار:</p>
+                                                            <div
+                                                                style="display: flex; justify-content:space-between; align-items: center; flex-wrap: wrap;">
+                                                                <label
+                                                                    class=" font-weight-bold text-dark text-center bg-light  p-5"
+                                                                    style="border-radius: 10px;">
+                                                                    <img src="{% static 'jazee.png' %}"
+                                                                        style="height: 100px; width: 200px; margin-bottom: 10px; " />
+                                                                    <input type="radio" name="bank_for_zood" value="3">
+
+                                                                </label>
+                                                                <label
+                                                                    class=" font-weight-bold text-dark text-center bg-light p-5"
+                                                                    style="border-radius: 10px;">
+                                                                    <img src="{% static 'enma.png' %}"
+                                                                        style="height: 100px; width: 200px; margin-bottom: 10px; " />
+                                                                    <input type="radio" name="bank_for_zood" value="2">
+
+                                                                </label>
+                                                                <label
+                                                                    class=" font-weight-bold text-dark text-center bg-light p-5"
+                                                                    style="border-radius: 10px;">
+                                                                    <img src="{% static 'arab.jpeg' %}"
+                                                                        style="height: 100px; width: 200px; margin-bottom: 10px; " />
+                                                                    <input type="radio" name="bank_for_zood" value="1">
+
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="d-flex justify-content-between border-top mt-5 pt-10">
+                                                        <button id="Next"
+                                                            class="btn btn-primary font-weight-bolder text-uppercase px-10 o-tree-btn-next">
+                                                            التالي</button>
+
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // get the monthly_installment_amount value;
+    var monthly_installment_amount = document.getElementById("monthly_installment_amount");
+    var totalHere = document.getElementById("totalHere");
+    var total = 0;
+    monthly_installment_amount.addEventListener("change", function () {
+        total = parseInt(monthly_installment_amount.value) * 60;
+        totalHere.innerHTML = total;
+    });
+</script>
+<script>
+    // get the monthly_installment_amount value;
+    const endorsmentContainer = document.getElementById("endorsmentContainer");
+    const endorsementInput = document.getElementById("endorsementInput");
+
+   
+    console.log("user group is 1")
+    const groupOnceCheckbox = document.getElementById('register_in_zood')
+    if (groupOnceCheckbox) {
+        groupOnceCheckbox.addEventListener('change', function () {
+            if (groupOnceCheckbox.checked) {
+                endorsmentContainer.style.display = "flex";
+            } else {
+                endorsmentContainer.style.display = "none";
+            }
+        });
+    }
+   
+
+
+
+</script>
+
+<script>
+    // Toggle Accordion Item #1
+    function toggle(event) {
+        var myCollapse = document.getElementsByClassName('collapse')[0];
+        var bsCollapse = new bootstrap.Collapse(myCollapse, {
+            toggle: true
+        });
+    }
+</script>
+
+{{ endblock }}

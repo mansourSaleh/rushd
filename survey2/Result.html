@@ -1,0 +1,93 @@
+{{ extends "global/Page.html" }}
+{{ extends "base.html" }}
+
+{{ block content }}
+
+<div class="d-flex flex-column flex-root">
+    <div class="d-flex flex-row flex-column-fluid page">
+        <div class="d-flex flex-column flex-row-fluid wrapper">
+            <div class="content d-flex flex-column flex-column-fluid">
+                
+                <div class="d-flex flex-column-fluid">
+                    <div class="container">
+                        <div class="card card-custom">
+                            <div class="card-body p-0">
+                                <div id="kt_wizard" data-wizard-state="step-first" data-wizard-clickable="false"
+                                    class="wizard wizard-2">
+                                   
+                                    <div id="kt_wizard_v3" data-wizard-state="step-first" data-wizard-clickable="true"
+                                        class="wizard-body wizard wizard-3">
+                                        <div class="row m-4" style="justify-content: center;">
+                                            
+
+                                            <lottie-player src="https://lottie.host/83b52745-864d-47fb-969b-42f5a9e59c7d/me7wlWTEU5.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;"   autoplay></lottie-player>
+
+
+
+
+                                            <div class=" text-left p-4 mb-8 good-result" style="color: rgba(12,41,71)">
+                                                
+                                                <h2 class="m-2  text-center">
+                                                    شكراً لك على مشاركتنا هذه التجربة
+                                                </h2>
+                                                <!-- add if statment -->
+                                                {{ if monthlyIncome > 20000 }}
+                                                <h4 class="text-dark text-center">
+                                                   هذه التجربة مخصصة لأصحاب الرواتب التي تقل عن 20,000 ريال
+                                                </h4>
+
+                                                {{ endif }}
+
+                                                
+
+                                            </div>
+
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    // JavaScript function to display the selected SVG
+    function showSelectedSVG(selectedValue) {
+        console.log(selectedValue);
+        // Get the SVGs
+        const svgMale = document.getElementById('male-svg');
+        const svgFemale = document.getElementById('female-svg');
+        if (selectedValue == '1') {
+            svgMale.style.display = 'block';
+            svgFemale.style.display = 'none';
+            svgFemale.value = '';
+        } else {
+            svgMale.style.display = 'none';
+            svgFemale.style.display = 'block';
+            svgMale.value = '';
+        }
+    }
+
+
+    // Add an event listener to the radio buttons
+    document.querySelectorAll('.my-radio').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+            showSelectedSVG(this.value);
+        });
+    });
+
+</script>
+
+
+
+{{ endblock }}

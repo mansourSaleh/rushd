@@ -7,6 +7,12 @@ SESSION_CONFIGS = [
         app_sequence=['survey'],
         num_demo_participants=9,
     ),
+    dict(
+        name='survey2',
+        display_name="بنك التنمية الاجتماعية ، النموذج الموحد",
+        app_sequence=['survey2'],
+        num_demo_participants=9,
+    ),
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs

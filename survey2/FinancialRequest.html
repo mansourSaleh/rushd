@@ -1,0 +1,489 @@
+{{ extends "global/Page.html" }}
+{{ extends "base.html" }}
+
+{{ block content }}
+
+<div class="d-flex flex-column flex-root">
+    <div class="d-flex flex-row flex-column-fluid page">
+        <div class="d-flex flex-column flex-row-fluid wrapper">
+            <div class="content d-flex flex-column flex-column-fluid">
+                <div class="subheader py-2 py-lg-6 subheader-transparent">
+                    <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap" >
+                        <div class="d-flex align-items-center flex-wrap mr-1" >
+                            <div class="d-flex align-items-baseline flex-wrap " >
+                                <h5 class="text-dark font-weight-bold my-1 "> 
+                                     </h5>
+                                
+                            </div>
+                        </div>
+                        <img src="{% static 'logoGray.png' %}"
+                            style="width: 100px; height: 100px; object-fit: contain;  "
+                        />
+                    </div>
+                </div>
+                <div class="d-flex flex-column-fluid">
+                    <div class="container">
+                        <div class="card card-custom">
+                            <div class="card-body p-0">
+                                <div data-wizard-state="step-first" data-wizard-clickable="false"
+                                    class="wizard wizard-2">
+                                    <div onclick="toggle(event)">
+
+                                        <div class="wizard-nav border-right pt-8 px-8 pt-lg-20 px-lg-10 ">
+                                            <div class="wizard-steps">
+                                                <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                    data-wizard-state="current">
+                                                    <div class="wizard-wrapper ng-star-inserted">
+
+                                                        <div class="wizard-label">
+                                                            <h3 class="wizard-title">
+                                                                
+                                                                بيانات طلب التمويل
+                                                            </h3>
+                                                            <div class="wizard-desc text-mute font-weight-bold">
+                                                                بيانات طلب التمويل
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="accordionPanelsStayOpenExample" class="accordion-collapse collapse ">
+                                            <div class="wizard-nav border-right  px-8  px-lg-10 accordion">
+                                                <div id="panelsStayOpen-collapseOne" class="wizard-steps"
+                                                    aria-labelledby="panelsStayOpen-headingOne">
+
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-icon ng-star-inserted">
+                                                                <span><svg id="check-mark"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="20.05"
+                                                                        height="20.05" viewBox="0 0 20.05 20.05">
+                                                                        <g id="Group_215" data-name="Group 215">
+                                                                            <path id="Path_246" data-name="Path 246"
+                                                                                d="M17.113,17.113a10.024,10.024,0,1,0-14.177,0A10.023,10.023,0,0,0,17.113,17.113ZM6.431,8.493l2.254,2.254,4.938-4.934L15.37,7.56l-4.934,4.934L8.685,14.241,6.938,12.494,4.684,10.24Z"
+                                                                                fill="#12a8c0"></path>
+                                                                        </g>
+                                                                    </svg></span>
+                                                            </div>
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">
+                                                                    ساعد البنك في تجربة الدراسة
+                                                                </h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    ساعد البنك في تجربة الدراسة
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-icon ng-star-inserted">
+                                                                <span><svg id="check-mark"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="20.05"
+                                                                        height="20.05" viewBox="0 0 20.05 20.05">
+                                                                        <g id="Group_215" data-name="Group 215">
+                                                                            <path id="Path_246" data-name="Path 246"
+                                                                                d="M17.113,17.113a10.024,10.024,0,1,0-14.177,0A10.023,10.023,0,0,0,17.113,17.113ZM6.431,8.493l2.254,2.254,4.938-4.934L15.37,7.56l-4.934,4.934L8.685,14.241,6.938,12.494,4.684,10.24Z"
+                                                                                fill="#12a8c0"></path>
+                                                                        </g>
+                                                                    </svg></span>
+                                                            </div>
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">
+                                                                    قيم وضعك
+                                                                    المالي
+                                                                </h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    قيم وضعك
+                                                                    المالي
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-icon ng-star-inserted">
+                                                                <span><svg id="check-mark"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="20.05"
+                                                                        height="20.05" viewBox="0 0 20.05 20.05">
+                                                                        <g id="Group_215" data-name="Group 215">
+                                                                            <path id="Path_246" data-name="Path 246"
+                                                                                d="M17.113,17.113a10.024,10.024,0,1,0-14.177,0A10.023,10.023,0,0,0,17.113,17.113ZM6.431,8.493l2.254,2.254,4.938-4.934L15.37,7.56l-4.934,4.934L8.685,14.241,6.938,12.494,4.684,10.24Z"
+                                                                                fill="#12a8c0"></path>
+                                                                        </g>
+                                                                    </svg></span>
+                                                            </div>
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">التحليل
+                                                                    المالي</h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    التحليل
+                                                                    المالي</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="current">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">
+                                                                    بيانات طلب التمويل</h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    
+                                                                    بيانات طلب التمويل</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  
+                                                    <div data-wizard-type="step" class="wizard-step ng-star-inserted"
+                                                        data-wizard-state="">
+                                                        <div class="wizard-wrapper ng-star-inserted">
+                                                            <div class="wizard-label">
+                                                                <h3 class="wizard-title">نتيجة التحليل
+                                                                    المالي</h3>
+                                                                <div class="wizard-desc text-mute font-weight-bold">
+                                                                    نتيجة
+                                                                    التحليل المالي</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-wizard-state="step-first" data-wizard-clickable="true"
+                                        class="wizard-body wizard wizard-3">
+
+                                        <div class="row justify-content-center py-10 px-8 py-lg-12 px-lg-10">
+                                            <div class="col-xl-12 col-xxl-12">
+                                                {% load otree static %}
+
+                                                <form novalidate="" class="ng-untouched ng-pristine ng-invalid">
+                                                    <div class="row">
+                                                        <div class="col-xl-6 my-3 ng-star-inserted">
+                                                            <div class="form-floating">
+                                                                <label for="floatingPassword">اختر
+                                                                    مكان الفرع
+                                                                </label>
+                                                                <select id="bank_branch"  {% if
+                                                                    form.bank_branch.errors %}
+                                                                    style="border-color: red;" {% endif %}
+                                                                    name="bank_branch" placeholder="placeholder"
+                                                                    class="form-control ng-pristine ng-invalid ng-touched">
+                                                                    <option disabled="" selected="" value="">الرجاء
+                                                                        الاختيار
+                                                                    </option>
+                                                                    <option value="1"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بمكة
+                                                                        المكرمة</option>
+                                                                    <option
+                                                                        value="2"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بالمدينة المنورة</option>
+                                                                    <option value="3"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بالرياض</option>
+                                                                    <option value="4"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بالدمام</option>
+                                                                    <option value="5"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بالأحساء</option>
+                                                                    <option value="6"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بحفر
+                                                                        الباطن</option>
+                                                                    <option value="7"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بعرعر</option>
+                                                                    <option value="8"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بالقريات</option>
+                                                                    <option value="9"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بالجوف</option>
+                                                                    <option value="10"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بتبوك</option>
+                                                                    <option value="11"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بحائل</option>
+                                                                    <option value="12"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بالقصيم</option>
+                                                                    <option value="13"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بالدوادمي</option>
+                                                                    <option value="14"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بينبع</option>
+                                                                    <option value="15"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بجدة
+                                                                    </option>
+                                                                    <option value="16"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بالطائف</option>
+                                                                    <option value="17"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بالباحة</option>
+                                                                    <option value="18"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بنجران</option>
+                                                                    <option value="19"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بجازان</option>
+                                                                    <option value="20"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بالقنفذة</option>
+                                                                    <option value="21"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بوادي الدواسر</option>
+                                                                    <option value="22"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        ببيشة </option>
+                                                                    <option value="23"
+                                                                        class="ng-star-inserted">بنك التنمية الاجتماعية
+                                                                        بخميس مشيط </option>
+                                                                </select>
+
+                                                                {{ if form.bank_branch.errors }}
+                                                                <div class="text-danger">{{ form.bank_branch.errors.0 }}
+                                                                </div>
+                                                                {{ endif }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6 my-3 ng-star-inserted">
+                                                            <div class="form-floating">
+                                                                <label for="floatingPassword">نوع
+                                                                    التمويل</label>
+                                                                <select  placeholder="placeholder"
+                                                                id="loan_type"  {% if
+                                                                    form.loan_type.errors %}
+                                                                    style="border-color: red;" {% endif %}
+                                                                    name="loan_type" 
+                                                                    class="form-control ng-pristine ng-invalid ng-touched"
+                                                                    >
+                                                                    <option selected="" value="1">قرض
+                                                                        الأسرة
+                                                                    </option>
+                                                                    <option selected="" value="2">قرض
+                                                                        الترميم
+                                                                    </option>
+                                                                    <option selected="" value="3">قرض
+                                                                        الزواج
+                                                                    </option>
+                                                                    <option selected="" value="4">قرض
+                                                                        العمل الحر
+                                                                    </option>
+                                                                </select>
+                                                                {{ if form.loan_type.errors }}
+                                                                <div class="text-danger">{{ form.loan_type.errors.0 }}
+                                                                </div>
+                                                                {{ endif }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6 my-3 ng-star-inserted">
+                                                            
+                                                                <div class="form-floating">
+                                                                    <input type="text"
+                                                                        placeholder="don't remove it"
+                                                                        class="form-control ng-untouched ng-pristine ng-invalid "
+                                                                        id="request_reason"
+                                                                        name="request_reason" {% if
+                                                                        form.request_reason.errors %}
+                                                                        style="border-color: red;" {% endif %}><label
+                                                                        for="floatingPassword">
+                                                                            سبب القرض
+                                                                    </label></div>
+                                                                {{ if form.request_reason.errors }}
+                                                                <div class="text-danger">{{
+                                                                    form.request_reason.errors.0 }}</div>
+                                                                {{ endif }}
+                                                          
+                                                        </div>
+                                                        <div class="col-xl-6 my-3 ng-star-inserted">
+                                                            <label class=" font-weight-bold text-dark text-center">
+                                                                هل لديك عمالة منزلية ؟
+                                                            </label>
+                                                            <div class="custom-agree-for-experiment">
+
+                                                                <label class=" font-weight-bold text-dark text-center">
+                                                                    <input type="radio" name="does_have_home_worker"
+                                                                        value="True">
+                                                                    نعم
+                                                                </label>
+                                                                <label class=" font-weight-bold text-dark text-center">
+                                                                    <input type="radio" name="does_have_home_worker"
+                                                                        value="False">
+                                                                    لا
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-lg-6 mb-4 ng-star-inserted">
+                                                            <div class="form-floating"><input type="text"
+                                                                    placeholder="don't remove it"
+                                                                    class="form-control ng-untouched ng-pristine ng-invalid convert-to-number"
+                                                                    id="count_of_all_family_members"
+                                                                    name="count_of_all_family_members" {% if
+                                                                    form.count_of_all_family_members.errors %}
+                                                                    style="border-color: red;" {% endif %}><label
+                                                                    for="floatingPassword">عدد أفراد العائلة بما فيهم
+                                                                    المتقدم والأيتام والمكفولين</label></div>
+                                                            {{ if form.count_of_all_family_members.errors }}
+                                                            <div class="text-danger">{{
+                                                                form.count_of_all_family_members.errors.0 }}</div>
+                                                            {{ endif }}
+                                                        </div>
+                                                        <div class="col-lg-6 mb-4 ng-star-inserted">
+                                                            <div class="form-floating"><input type="text"
+                                                                    placeholder="don't remove it"
+                                                                    class="form-control ng-untouched ng-pristine ng-invalid convert-to-number"
+                                                                    id="count_of_children" name="count_of_children" {%
+                                                                    if form.count_of_children.errors %}
+                                                                    style="border-color: red;" {% endif %}><label
+                                                                    for="floatingPassword">عدد الأبناء والبنات</label>
+                                                            </div>
+                                                            {{ if form.count_of_children.errors }}
+                                                            <div class="text-danger">{{ form.count_of_children.errors.0
+                                                                }}</div>
+                                                            {{ endif }}
+                                                        </div>
+                                                    </div>
+
+                                                   
+
+                                                    <!--job -->
+                                                    <div class="row">
+                                                       
+                                                        <div class="col-xl-6 my-3 ng-star-inserted">
+                                                            <div class="form-floating">
+                                                                <label for="floatingPassword">اختر
+                                                                    القطاع الوظيفي
+                                                                </label>
+                                                                <select id="job"  {% if
+                                                                    form.job.errors %} style="border-color: red;" {%
+                                                                    endif %} name="job" placeholder="placeholder"
+                                                                    class="form-control ng-pristine ng-invalid ng-touched">
+                                                                    <option disabled="" selected="" value="">الرجاء
+                                                                        الاختيار
+                                                                    </option>
+                                                                    <option value="1"
+                                                                        class="ng-star-inserted">
+                                                                        موظف حكومي مدني</option>
+                                                                    <option value="2"
+                                                                        class="ng-star-inserted">
+                                                                        موظف حكومي عسكري</option>
+                                                                    <option value="3"
+                                                                        class="ng-star-inserted">
+                                                                        موظف قطاع خاص</option>
+                                                                    <option value="4" class="ng-star-inserted">
+                                                                        عمل حر</option>
+                                                                    <option value="5" class="ng-star-inserted">
+                                                                        طالب</option>
+                                                                    <option value="6" class="ng-star-inserted">
+                                                                        متقاعد</option>
+
+                                                                </select>
+
+                                                                {{ if form.job.errors }}
+                                                                <div class="text-danger">{{ form.job.errors.0 }}
+                                                                </div>
+                                                                {{ endif }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6  my-3 mb-4 ng-star-inserted">
+                                                            <div class="form-floating"><input type="text"
+                                                                    placeholder="don't remove it"
+                                                                    class="form-control ng-untouched ng-pristine ng-invalid"
+                                                                    id="job_title" name="job_title" {% if
+                                                                    form.job_title.errors %} style="border-color: red;"
+                                                                    {% endif %}><label for="floatingPassword">المسمى
+                                                                    الوظيفي</label></div>
+                                                            {{ if form.job_title.errors }}
+                                                            <div class="text-danger">{{
+                                                                form.job_title.errors.0 }}</div>
+                                                            {{ endif }}
+                                                        </div>
+                                                    </div>
+
+                                                  
+
+
+                                                    <div class="d-flex justify-content-between border-top mt-5 pt-10">
+                                                        <button id="Next"
+                                                            class="btn btn-primary font-weight-bolder text-uppercase px-10 o-tree-btn-next">
+                                                            التالي</button>
+
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // get all input with class of convert-to-number;
+    var inputs = document.querySelectorAll('.convert-to-number');
+    // lesten to on change event
+    inputs.forEach(input => {
+        input.addEventListener('change', function () {
+            // convert the value to number
+            var value = this.value;
+            // convert arabic numbers to english
+            let arabic = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g];
+            let english = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            value = value.toString();
+            for (var i = 0; i < 10; i++) {
+                value = value.replace(arabic[i], english[i]);
+            }
+            console.log(value, "vallue")
+            value = parseFloat(value);
+            // check if the value is not a number
+            if (isNaN(value)) {
+                // set the value to 0
+                this.value = 0;
+            } else {
+                // set the value to the number
+                this.value = value;
+            }
+        })
+    
+    })
+</script>
+
+<script>
+    // Toggle Accordion Item #1
+    function toggle(event) {
+        var myCollapse = document.getElementsByClassName('collapse')[0];
+        var bsCollapse = new bootstrap.Collapse(myCollapse, {
+            toggle: true
+        });
+    }
+</script>
+
+
+
+{{ endblock }}
